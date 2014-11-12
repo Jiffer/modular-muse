@@ -1,0 +1,46 @@
+#N canvas 323 146 652 449 12;
+#X obj -283 33 cnv 15 600 50 empty empty modular-mus_2_channel_mixer
+20 12 0 18 -183872 -66577 0;
+#X text -259 55 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj -100 159 mm-mix2~;
+#X obj -177 326 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text -157 325 signal;
+#X obj -256 317 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X text -87 325 Audio input 1;
+#X obj -177 353 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280
+0;
+#X text -157 352 signal;
+#X obj -177 380 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280
+0;
+#X text -157 379 float;
+#X text -87 352 Audio input 2;
+#X text -87 379 mix level (0 \, 1) \, 0 is in1 1 is in2;
+#X text -255 288 mm-mix2~;
+#X text -178 288 mix 2 audio signals;
+#X obj -255 408 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj -176 416 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text -156 415 signal;
+#X text -86 415 Mixed audio output;
+#X obj -100 244 dac~;
+#X obj -159 103 osc~ 300;
+#X obj -63 99 osc~ 400;
+#X msg 17 112 0;
+#X msg 55 112 0.5;
+#X msg 95 112 1;
+#X obj -100 216 *~;
+#X obj -57 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 2 0 25 0;
+#X connect 20 0 2 0;
+#X connect 21 0 2 1;
+#X connect 22 0 2 2;
+#X connect 23 0 2 2;
+#X connect 24 0 2 2;
+#X connect 25 0 19 0;
+#X connect 25 0 19 1;
+#X connect 26 0 25 1;

@@ -1,0 +1,103 @@
+#N canvas 0 22 1267 742 12;
+#X msg 534 369 2;
+#X msg 547 345 2.15;
+#X msg 559 323 4.25;
+#X obj 497 638 *~;
+#X obj 331 344 +;
+#X obj 380 398 mm-fm~;
+#X obj 846 354 mm-adsr~;
+#X obj 331 238 mm-lfo 7 -0.2 0.2;
+#X obj 70 -37 modular-mus;
+#X obj 815 279 mm-digital 0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-notes 14 float 3;
+#A 0 0 3 5 7 10 12 15 17 19 22 24 31 34 36;
+#X coords 0 36 14 -1 200 140 1 0 0;
+#X restore 674 -54 graph;
+#X obj 903 -64 loadbang;
+#X obj 902 2 loadbang;
+#X floatatom 205 275 5 0 0 0 - - -;
+#X obj 206 222 int;
+#X obj 331 317 t b f;
+#X obj 205 298 + 48;
+#X obj 331 369 mtof;
+#X obj 498 706 mm-filter~;
+#X obj 61 401 mm-vco~;
+#X obj 61 479 mm-gain~;
+#X obj 380 477 mm-gain~;
+#X obj 206 118 mm-analog 0 0 14;
+#X text 247 -44 synth.pd;
+#X obj 263 368 loadbang;
+#X obj 206 250 tabread \$0-notes;
+#X msg 903 -41 \; \$0-notes 0 0 3 5 7 10 12 15 17 19 22 24 31 34 36
+;
+#X text 977 -63 Initialize the notes array (the first 0 is where to
+start);
+#X text 973 3 set view range for array;
+#X msg 902 25 \; \$0-notes bounds 0 36 14 -1;
+#X text 330 211 This LFO is used to modulate the pitch;
+#X text 325 116 Analog input 0 is used to address the notes list which
+is used to determine the pitch;
+#X text 814 256 Digital input 0 is used to trigger the volume envelope
+;
+#X text 247 -14 This is a subtractive synthesis example with both mm-vco~
+and mm-fm~ as sound sources. Use the mm-gain~ object to change the
+balance;
+#X obj 488 1061 dac~;
+#X obj 498 796 mm-reverb~;
+#X obj 499 888 mm-overdrive~;
+#X obj 536 647 mm-digital 2;
+#X obj 781 845 mm-digital 3;
+#X text 247 50 It uses an array (to the right) called \$0-notes which
+is populated with a pentatonic scale.;
+#X text 624 254 Analog 1 controls FM;
+#X text 629 271 modulation index;
+#X text 813 602 Analog input 2 is used to control the filter cutoff
+frequency. set to go from 500 to 5000 Hz;
+#X obj 804 1004 mm-out 0;
+#X obj 804 981 snapshot~;
+#X obj 804 959 metro 20;
+#X obj 804 942 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 805 920 loadbang;
+#X obj 636 978 abs~;
+#X msg 501 342 3;
+#X obj 687 603 mm-analog 1 500 5000;
+#X obj 631 297 mm-analog 2 -10 10;
+#X connect 0 0 5 2;
+#X connect 1 0 5 2;
+#X connect 2 0 5 2;
+#X connect 3 0 18 0;
+#X connect 4 0 17 0;
+#X connect 5 0 21 0;
+#X connect 6 0 3 1;
+#X connect 7 0 15 0;
+#X connect 9 1 6 0;
+#X connect 11 0 26 0;
+#X connect 12 0 29 0;
+#X connect 13 0 16 0;
+#X connect 14 0 25 0;
+#X connect 15 0 4 0;
+#X connect 15 1 4 1;
+#X connect 16 0 4 0;
+#X connect 17 0 5 0;
+#X connect 17 0 19 0;
+#X connect 18 0 35 0;
+#X connect 19 0 20 0;
+#X connect 20 0 3 0;
+#X connect 21 0 3 0;
+#X connect 22 0 14 0;
+#X connect 24 0 19 5;
+#X connect 25 0 13 0;
+#X connect 35 0 36 0;
+#X connect 36 0 34 0;
+#X connect 36 0 34 1;
+#X connect 36 0 48 0;
+#X connect 38 0 36 1;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
+#X connect 46 0 45 0;
+#X connect 47 0 46 0;
+#X connect 48 0 44 0;
+#X connect 49 0 5 2;
+#X connect 50 0 18 3;

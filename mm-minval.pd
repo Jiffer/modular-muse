@@ -1,0 +1,26 @@
+#N canvas 411 113 451 424 10;
+#X obj 111 55 inlet;
+#X obj 178 45 inlet;
+#X obj 173 262 outlet;
+#X obj 220 100 loadbang;
+#X obj 191 183 f;
+#X obj 191 202 t b;
+#X obj 191 163 t b;
+#X obj 173 232 min;
+#X msg 195 138 1;
+#X text 177 28 bang to reset;
+#X text 313 68 outputs the smallest value seen at the left inlet bang
+the right inlet to reset;
+#X connect 0 0 7 0;
+#X connect 0 0 6 0;
+#X connect 1 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 5 0;
+#X connect 4 0 7 1;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 1;
+#X connect 7 0 2 0;
+#X connect 8 0 4 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;

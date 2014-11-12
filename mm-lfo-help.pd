@@ -1,0 +1,48 @@
+#N canvas 0 22 673 646 12;
+#X obj -381 349 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X obj -381 376 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280
+0;
+#X obj -381 403 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280
+0;
+#X text -358 402 float;
+#X text -361 348 float;
+#X text -360 375 float;
+#X obj -381 430 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280
+0;
+#X text -358 429 float;
+#X obj -460 344 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X text -291 348 on/off;
+#X text -291 375 LFO Period (in seconds);
+#X text -291 402 minimum value - Output will be between min and max
+;
+#X text -291 429 maximum value - Output will be between min and max
+;
+#X text -459 318 mm-lfo;
+#X text -382 318 Low Frequency Oscillator - sinusoidal control signal
+;
+#X obj -460 460 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj -381 468 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text -361 466 signal;
+#X text -295 466 LFO output;
+#X obj -502 17 cnv 15 600 50 empty empty modular-mus_low_frequency_oscillator
+20 12 0 18 -183872 -66577 0;
+#X text -478 39 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj -406 210 +~;
+#X obj -406 242 osc~;
+#X obj -415 273 dac~;
+#X floatatom -436 175 5 0 0 0 - - -;
+#X msg -436 147 400;
+#X obj -436 114 loadbang;
+#X obj -350 119 mm-lfo 5 -5 5;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 22 0 23 1;
+#X connect 24 0 21 0;
+#X connect 25 0 24 0;
+#X connect 26 0 25 0;
+#X connect 27 0 21 1;

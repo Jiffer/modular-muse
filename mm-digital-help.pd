@@ -1,0 +1,31 @@
+#N canvas 0 22 687 478 10;
+#X obj 17 66 cnv 15 600 290 empty empty Digital_Inputs 20 12 0 14 -97298
+-66577 0;
+#X obj 54 118 mm-digital 0;
+#X text 52 93 mm-digital: digital input object;
+#X text 391 78 Usage: [mm-digital #];
+#X obj 30 176 cnv 3 550 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 108 185 cnv 17 3 37 empty empty 0 5 9 0 16 -228856 -45076 0
+;
+#X text 128 184 signal;
+#X obj 108 229 cnv 17 3 37 empty empty 1 5 9 0 16 -228856 -45076 0
+;
+#X text 128 228 signal;
+#X obj 108 273 cnv 17 3 37 empty empty 2 5 9 0 16 -228856 -45076 0
+;
+#X text 128 272 signal;
+#X text 198 276 bang on transition to 0;
+#X text 393 96 arguments:;
+#X text 393 118 1;
+#X text 437 119 pin number;
+#X obj 17 4 cnv 15 600 50 empty empty modular-mus_digital_input 20
+12 0 18 -183872 -66577 0;
+#X text 41 26 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj 108 318 cnv 17 3 37 empty empty 3 5 9 0 16 -228856 -45076 0
+;
+#X text 128 317 signal;
+#X text 198 321 bang on transition to 0;
+#X text 198 184 current value of digital input (0 or 1);
+#X text 197 229 inverse of current value at input;

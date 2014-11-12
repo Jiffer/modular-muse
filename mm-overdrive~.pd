@@ -1,0 +1,67 @@
+#N canvas 606 112 444 628 12;
+#X obj 101 119 cnv 15 248 53 empty empty empty 20 12 0 14 -248960 -66577
+0;
+#X obj 62 295 overdrive~;
+#X obj 61 244 *~;
+#X obj 196 212 line~;
+#X msg 198 186 \$1 20;
+#X obj 29 153 inlet~;
+#X obj 31 530 outlet~;
+#X obj 247 136 knob 32 32 1 8 0 0 empty empty input -2 -10 0 12 -262144
+-1 -1 443 1;
+#X obj 301 135 knob 32 32 1 20 0 0 empty empty overdrive -15 -10 0
+12 -262144 -1 -1 653 1;
+#X msg 184 289 1;
+#X obj 183 262 loadbang;
+#X obj 61 373 *~;
+#X obj 179 371 /~;
+#X obj 180 344 sig~;
+#X obj 254 47 loadbang;
+#X msg 255 76 2;
+#X msg 310 69 5;
+#X msg 301 198 \$1 20;
+#X obj 299 224 line;
+#X obj 137 64 inlet;
+#X obj 252 15 inlet;
+#X obj 304 18 inlet;
+#X obj 28 486 mm-bypass~;
+#X obj 152 121 tgl 25 0 empty empty on 4 30 0 14 -99865 -4034 -1 1
+1;
+#X obj 194 136 knob 32 32 0 1 0 0 empty empty dry/wet -4 -10 0 12 -262144
+-1 -1 0 1;
+#X obj 194 17 inlet;
+#X obj 106 402 mm-mix2~;
+#X msg 200 73 0.5;
+#X connect 1 0 11 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 3 0 12 1;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 5 0 22 0;
+#X connect 5 0 26 0;
+#X connect 7 0 4 0;
+#X connect 8 0 17 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 11 0 26 1;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 14 0 16 0;
+#X connect 14 0 23 0;
+#X connect 14 0 27 0;
+#X connect 15 0 7 0;
+#X connect 16 0 8 0;
+#X connect 17 0 18 0;
+#X connect 18 0 1 0;
+#X connect 19 0 23 0;
+#X connect 20 0 7 0;
+#X connect 21 0 8 0;
+#X connect 22 0 6 0;
+#X connect 23 0 22 2;
+#X connect 24 0 26 2;
+#X connect 25 0 24 0;
+#X connect 26 0 22 1;
+#X connect 27 0 24 0;
+#X coords 0 -1 1 1 250 75 1 100 100;

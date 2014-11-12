@@ -1,0 +1,26 @@
+#N canvas 0 22 757 545 10;
+#X obj 101 45 inlet;
+#X obj 148 45 inlet;
+#X obj 129 244 outlet;
+#X obj 161 68 loadbang;
+#X text 187 41 bang to reset;
+#X obj 129 200 max;
+#X obj 152 151 f;
+#X obj 147 173 t b;
+#X obj 151 129 t b;
+#X msg 151 106 0;
+#X text 323 78 outputs the largest value seen at the left inlet bang
+the right inlet to reset;
+#X connect 0 0 5 0;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 3 0 9 0;
+#X connect 5 0 6 1;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 9 0 8 0;
+#X connect 9 0 5 0;

@@ -1,0 +1,21 @@
+#N canvas 342 77 791 621 10;
+#X obj 101 214 cnv 15 78 23 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X obj 103 276 s O\$1;
+#X obj 99 64 inlet;
+#X floatatom 103 221 5 0 1 0 - - -;
+#X text 101 295 output data;
+#X obj 147 222 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 138 125 sel 0 1;
+#X msg 138 153 0;
+#X msg 157 174 1;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X coords -1 -1 1 1 80 40 1 100 200;

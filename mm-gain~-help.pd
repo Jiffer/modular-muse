@@ -1,0 +1,39 @@
+#N canvas 472 194 704 584 12;
+#X obj -145 163 mm-gain~;
+#X text -286 321 mm-gain~;
+#X text -206 321 volume control and mute.;
+#X obj -208 359 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text -188 358 signal;
+#X text -118 358 Audio input;
+#X obj -208 386 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280
+0;
+#X text -118 385 Volume control inlet (between 0 and 1);
+#X obj -208 414 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280
+0;
+#X text -118 413 Mute control inlet (1 toggles mute on \, 0 off);
+#X text -188 385 float;
+#X text -188 413 float;
+#X obj -287 350 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj -287 441 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj -208 449 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text -188 448 signal;
+#X text -118 448 Audio output;
+#X obj -293 23 cnv 15 600 50 empty empty modular-mus_volume_control
+20 12 0 18 -183872 -66577 0;
+#X text -269 45 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj -145 295 dac~;
+#X obj -145 99 osc~ 400;
+#X text -75 96 <- sound source;
+#X text -105 294 <- out to speakers;
+#X msg -103 135 0;
+#X msg -55 131 0.5;
+#X connect 0 0 19 0;
+#X connect 0 0 19 1;
+#X connect 20 0 0 0;
+#X connect 23 0 0 1;
+#X connect 24 0 0 1;

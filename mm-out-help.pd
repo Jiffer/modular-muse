@@ -1,0 +1,35 @@
+#N canvas 0 22 643 594 10;
+#X obj 9 -1319 cnv 15 600 350 empty empty Outputs 20 12 0 14 -154880
+-66577 0;
+#X obj 44 -1258 mm-out 0;
+#X obj 47 -1295 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 54 -1276 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X text 420 -1315 Usage: [mm-out #];
+#X text 420 -1284 arguments:;
+#X text 420 -1262 1;
+#X text 464 -1261 pin number;
+#X obj 31 -1203 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj 109 -1194 cnv 17 3 37 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text 129 -1195 signal;
+#X obj 30 -1152 cnv 3 550 3 empty \$0-pddp.cnv.inlets gui 8 12 0 13
+-228856 -1 0;
+#X obj 108 -1143 cnv 17 3 80 empty empty empty 5 9 0 16 -228856 -162280
+0;
+#X text 199 -1195 Value to send to output pin (PWM value);
+#X text 198 -1175 Should be between (0 \, 1);
+#X text 128 -1144 number;
+#X text 128 -1104 toggle;
+#X text 198 -1104 click to manually toggle digital output between 0
+and 1;
+#X text 198 -1144 Indicates last value written to output \, click and
+drag to change (use shift+click to get smaller steps);
+#X obj 9 -1381 cnv 15 600 50 empty empty modular-mus_output 20 12 0
+18 -183872 -66577 0;
+#X text 33 -1359 a modular hardware interfaces and audio manipulation
+toolkit;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;

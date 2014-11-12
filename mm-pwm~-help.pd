@@ -1,0 +1,28 @@
+#N canvas 638 292 642 486 12;
+#X obj 154 -303 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X obj 75 -312 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj 154 -270 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280
+0;
+#X obj 154 -239 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280
+0;
+#X text 174 -241 float;
+#X text 244 -271 Glide / portamento time;
+#X text 174 -304 float;
+#X text 174 -271 float;
+#X obj 75 -211 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 154 -203 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X text 174 -204 signal;
+#X text 244 -204 Audio output;
+#X text 244 -304 Frequency (Hz) (no effect on noise);
+#X obj 26 -549 cnv 15 600 50 empty empty modular-mus_pwm_waveform_generator
+20 12 0 18 -183872 -66577 0;
+#X obj 68 -472 mm-pwm~;
+#X text 50 -527 pulse width modulation sound generator;
+#X text 76 -361 mm-pwm~;
+#X text 153 -361 pulse width modulation waveform generator;
+#X text 157 -341;
+#X text 244 -240 pulse shape (.5 would be a square wave);

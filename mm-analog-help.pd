@@ -1,0 +1,54 @@
+#N canvas 0 22 889 567 10;
+#X obj 82 -94 cnv 15 600 470 empty empty Analog_Inputs 20 12 0 14 -261780
+-66577 0;
+#X obj 119 -52 mm-analog 0;
+#X text 114 -78 mm-analog: analog input object;
+#X text 456 -89 Usage: [mm-analog #];
+#X text 505 -70 [mm-analog # # #];
+#X text 457 -37 arguments:;
+#X text 457 -15 1;
+#X text 501 -14 pin number;
+#X text 457 6 2;
+#X text 501 4 low value (optional);
+#X text 457 26 3;
+#X text 501 24 high value (optional);
+#X text 457 52 default range is [0 \, 1];
+#X obj 99 75 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 177 84 cnv 17 3 37 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 197 83 signal;
+#X obj 177 134 cnv 17 3 37 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 197 133 signal;
+#X obj 177 184 cnv 17 3 37 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 197 183 signal;
+#X text 267 83 Update low value;
+#X text 267 133 Update high value;
+#X text 267 183 bang to recalibrate input. On recalibrate the full
+range of the input should be exercised to calibrate input range to
+the specified output range;
+#X obj 100 285 cnv 3 550 3 empty \$0-pddp.cnv.inlets gui 8 12 0 13
+-228856 -1 0;
+#X obj 178 294 cnv 17 3 80 empty empty empty 5 9 0 16 -228856 -162280
+0;
+#X text 198 293 high/low;
+#X text 268 293 indicates set high/low values \, click and drag to
+change;
+#X text 198 323 calib;
+#X text 268 323 click to recalibrate input range;
+#X text 198 353 hslider;
+#X text 268 353 indicates current value read at specified analog port
+;
+#X obj 100 233 cnv 3 550 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 178 242 cnv 17 3 37 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 198 241 signal;
+#X text 268 241 current value of analog input scaled to specified range
+;
+#X obj 83 -150 cnv 15 600 50 empty empty modular-mus_analog_input 20
+12 0 18 -183872 -66577 0;
+#X text 107 -128 a modular hardware interfaces and audio manipulation
+toolkit;

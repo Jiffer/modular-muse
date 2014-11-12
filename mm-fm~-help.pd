@@ -1,0 +1,51 @@
+#N canvas 0 22 773 657 12;
+#X obj 154 -83 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 75 -92 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 154 -50 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 154 -19 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 177 -21 float;
+#X text 244 -51 Glide / portamento time;
+#X text 174 -84 float;
+#X text 174 -51 float;
+#X obj 75 49 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0 13
+-228856 -1 0;
+#X obj 154 57 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 174 56 signal;
+#X text 244 56 Audio output;
+#X text 244 -84 Frequency (Hz) (no effect on noise);
+#X obj 26 -519 cnv 15 600 50 empty empty modular-mus_fm-synthesis_waveform_generator
+20 12 0 18 -183872 -66577 0;
+#X text 50 -497 frequency modulation synthesis waveform generator;
+#X text 76 -123 mm-fm~;
+#X text 153 -123 frequency modulation synthesis;
+#X obj 154 11 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 177 9 float;
+#X text 244 10 modulation index;
+#X text 244 -20 FM frequency ratio;
+#X obj 200 -176 dac~;
+#X obj 201 -201 *~;
+#X msg 358 -418 2.67;
+#X obj 233 -231 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 201 -314 mm-fm~;
+#X text 486 -343 <- larger index = "brighter" sound;
+#X msg 455 -338 7;
+#X msg 447 -362 2;
+#X text 259 -231 <-- toggle sound;
+#X text 397 -419 <- non-integer ratios will sound more dissonant;
+#X text 381 -394 <- integer ratios will sound more harmonic;
+#X msg 347 -395 2;
+#X connect 22 0 21 0;
+#X connect 22 0 21 1;
+#X connect 23 0 25 2;
+#X connect 24 0 22 1;
+#X connect 25 0 22 0;
+#X connect 27 0 25 3;
+#X connect 28 0 25 3;
+#X connect 32 0 25 2;

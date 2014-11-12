@@ -1,0 +1,60 @@
+#N canvas 0 22 817 634 12;
+#X obj 153 9 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0;
+#X obj 153 36 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 153 63 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 176 62 float;
+#X text 243 8 Frequency (Hz);
+#X text 173 8 float;
+#X text 174 35 float;
+#X text 75 -27 mm-adsr~;
+#X text 152 -27 ADSR (Attack \, Decay \, Sustain \, Release) Envelope
+Generator;
+#X text 243 35 Attack - time to ramp a note on;
+#X text 243 62 Decay - time to ramp from full level to sustain level
+;
+#X obj 153 90 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 176 89 float;
+#X obj 74 4 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 153 117 cnv 17 3 25 empty empty 4 5 9 0 16 -228856 -162280 0
+;
+#X text 176 116 float;
+#X text 243 89 Sustain - level to sustain at until note off;
+#X text 243 116 Release - time to go from sustain level to 0;
+#X obj 74 145 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 153 153 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 173 152 signal;
+#X text 239 152 Envelope output (between [0 \, 1]);
+#X obj 34 -367 cnv 15 600 50 empty empty modular-mus_ADSR_envelope_generator
+20 12 0 18 -183872 -66577 0;
+#X text 58 -345 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj 154 -58 dac~;
+#X obj 154 -93 *~;
+#X obj 226 -176 mm-adsr~;
+#X obj 248 -230 pipe 50;
+#X msg 248 -206 0;
+#X msg 225 -265 1;
+#X text 190 -97 <- multiply the output by a sound source to create
+a volume envelope;
+#X text 268 -268 <- a 1 triggers the envelope to go through the attack
+and decay time and will hold at the sustain level;
+#X text 306 -230 <- (delays bang by 50 ms);
+#X text 292 -206 <- a 0 triggers the release time;
+#X obj 102 -167 osc~ 400;
+#X obj 225 -301 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 25 0 24 0;
+#X connect 25 0 24 1;
+#X connect 26 0 25 1;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 29 0 26 0;
+#X connect 34 0 25 0;
+#X connect 35 0 29 0;
+#X connect 35 0 27 0;
