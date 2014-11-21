@@ -1,13 +1,12 @@
 #N canvas 99 22 998 756 12;
-#X obj 74 -21 modular-mus;
 #X obj 81 715 mm-analog 0;
 #X obj 82 862 mm-out 0;
 #X obj 85 825 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 84 2215 mm-reverb~;
-#X obj 85 2130 mm-overdrive~;
-#X obj 85 2376 mm-tremolo~;
-#X obj 84 2297 mm-filter~;
+#X obj 84 2465 mm-reverb~;
+#X obj 85 2380 mm-overdrive~;
+#X obj 85 2626 mm-tremolo~;
+#X obj 84 2547 mm-filter~;
 #X obj 92 843 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 81 629 mm-digital 0;
@@ -177,16 +176,16 @@ motor boards. See help for more info.;
 #X text 347 1604 mm-adsr~;
 #X text 424 1604 ADSR (Attack \, Decay \, Sustain \, Release) Envelope
 Generator;
-#X text 352 1692 mm-lfo;
-#X text 422 1691 Low Frequency Oscillator - sinusoidal control signal
+#X text 352 1962 mm-lfo;
+#X text 422 1961 Low Frequency Oscillator - sinusoidal control signal
 ;
-#X obj 84 1988 cnv 15 600 50 empty empty Audio_effects 20 12 0 18 -261234
+#X obj 84 2238 cnv 15 600 50 empty empty Audio_effects 20 12 0 18 -261234
 -66577 0;
 #X obj 80 941 cnv 15 600 50 empty empty Sound_Generation 20 12 0 18
 -221154 -66577 0;
 #X text 119 1393 modular-mus audio control objects;
 #X text 133 965 modular-mus sound generation objects;
-#X obj 85 2044 mm-delay~;
+#X obj 85 2294 mm-delay~;
 #X obj 84 1093 mm-pwm~;
 #X text 338 1088 mm-pwm~;
 #X text 417 1087 pulse-width modulation oscillator;
@@ -195,11 +194,11 @@ Generator;
 #X obj 85 1180 mm-fm~;
 #X obj 83 1553 mm-mix2~;
 #X obj 82 1610 mm-adsr~;
-#X obj 82 1696 mm-lfo 3 200 1000;
-#X text 621 1772 mm-seq;
-#X text 711 1774 16 step sequencer;
+#X obj 82 1966 mm-lfo 3 200 1000;
+#X text 621 2042 mm-seq;
+#X text 711 2044 16 step sequencer;
 #X obj 84 1434 mm-gain~;
-#X obj 82 1781 mm-seq 30 50;
+#X obj 82 2051 mm-seq 30 50;
 #X obj 83 1004 mm-vco~;
 #X text 260 624 mm-digital: digital input object. Use to read inputs
 from the digital pins. Use with digital modules such as buttons and
@@ -207,17 +206,25 @@ switches. See help for more info.;
 #X obj 86 1265 mm-pluck~;
 #X text 340 1262 mm-pluck~;
 #X text 421 1263 Plucked string model;
-#X text 355 2039 mm-delay~;
-#X text 355 2127 mm-overdrive~;
-#X text 355 2219 mm-reverb~;
-#X text 355 2307 mm-filter~;
-#X text 355 2377 mm-tremolo~;
-#X text 474 2040 audio delay with feedback;
-#X text 473 2218 artificial reverb (uses [freeverb~] object);
-#X text 470 2127 non-linear audio distortion (uses the [overdrive~]
+#X text 355 2289 mm-delay~;
+#X text 355 2377 mm-overdrive~;
+#X text 355 2469 mm-reverb~;
+#X text 355 2557 mm-filter~;
+#X text 355 2627 mm-tremolo~;
+#X text 474 2290 audio delay with feedback;
+#X text 473 2468 artificial reverb (uses [freeverb~] object);
+#X text 470 2377 non-linear audio distortion (uses the [overdrive~]
 object);
-#X text 478 2308 resonant low pass filter;
-#X text 480 2377 LFO based volume automation;
-#X connect 3 0 2 0;
-#X connect 8 0 2 0;
+#X text 478 2558 resonant low pass filter;
+#X text 480 2627 LFO based volume automation;
+#X obj 74 -21 mm;
+#X obj 82 1691 mm-ar~;
+#X text 348 1687 mm-ar~;
+#X text 427 1687 AR (Attack \, Release) Envelope Generator;
+#X obj 82 1775 mm-env;
+#X text 369 1788 mm-env;
+#X text 448 1788 Array based Envelope Generator;
+#X text 447 1805 draw in the array to create a "gesture";
+#X connect 2 0 1 0;
+#X connect 7 0 1 0;
 #X coords 0 756 1 755 150 110 0;

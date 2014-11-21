@@ -1,0 +1,58 @@
+#N canvas 720 141 564 434 10;
+#X obj 101 120 cnv 15 248 53 empty empty empty 20 12 0 14 -261682 -66577
+0;
+#X obj 113 404 vline~;
+#X obj 39 347 pack f f;
+#X obj 118 345 pack f f f;
+#X obj 114 266 t b b b;
+#X obj 36 253 t b b;
+#X obj 54 207 t b b;
+#X floatatom 126 184 5 0 0 0 - - -;
+#X obj 73 299 f;
+#X obj 189 297 f;
+#X obj 150 301 f;
+#X floatatom 316 194 5 0 0 0 - - -;
+#X obj 115 480 outlet~;
+#X obj 206 136 knob 32 32 1 2000 0 0 empty empty A -5 -10 0 12 -262144
+-1 -1 0 1;
+#X obj 314 137 knob 32 32 1 2000 0 0 empty empty R -5 -10 0 12 -262144
+-1 -1 0 1;
+#X obj 109 42 inlet;
+#X obj 380 47 loadbang;
+#X msg 195 69 20;
+#X obj 192 3 inlet;
+#X obj 319 3 inlet;
+#X msg 31 300 1;
+#X msg 310 68 100;
+#X msg 112 301 0;
+#X obj 110 132 bng 25 250 50 0 empty empty trigger -2 30 0 10 -262144
+-1 -1;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 22 0;
+#X connect 4 1 10 0;
+#X connect 4 2 9 0;
+#X connect 5 0 20 0;
+#X connect 5 1 8 0;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 7 0 9 1;
+#X connect 7 0 8 1;
+#X connect 8 0 2 1;
+#X connect 9 0 3 2;
+#X connect 10 0 3 1;
+#X connect 11 0 10 1;
+#X connect 13 0 7 0;
+#X connect 14 0 11 0;
+#X connect 15 0 23 0;
+#X connect 16 0 17 0;
+#X connect 16 0 21 0;
+#X connect 17 0 13 0;
+#X connect 18 0 13 0;
+#X connect 19 0 14 0;
+#X connect 20 0 2 0;
+#X connect 21 0 14 0;
+#X connect 22 0 3 0;
+#X connect 23 0 6 0;
+#X coords 0 -1 1 1 250 75 1 100 100;

@@ -1,0 +1,57 @@
+#N canvas 0 22 1104 742 10;
+#X obj 227 106 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 227 133 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 227 160 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 250 159 float;
+#X text 248 132 float;
+#X obj 148 101 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj 148 222 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 227 230 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 247 229 signal;
+#X obj 54 -347 cnv 15 600 50 empty empty modular-muse_array_based_envelope
+20 12 0 18 -183872 -66577 0;
+#X text 78 -325 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj 228 39 dac~;
+#X obj 228 4 *~;
+#X text 264 0 <- multiply the output by a sound source to create a
+volume envelope;
+#X obj 301 -272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 324 -273 <- trigger attack/release;
+#X text 342 -256 relase happens automatically after attack time;
+#X obj 300 -211 mm-env;
+#X obj 41 -207 mm-vco~;
+#X obj 203 -239 loadbang;
+#X text 247 105 bang;
+#X text 317 105 trigger envelope;
+#X text 317 132 time in milliseconds to "play" the gesture;
+#X text 313 229 Envelope output;
+#X obj 227 187 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 250 186 float;
+#X text 317 156 min value (bottom of the graph);
+#X text 317 183 max value (top of the graph);
+#X text 149 70 mm-env;
+#X text 226 70 array (graph) based envelope;
+#X text 592 -206 creation arguments:;
+#X text 593 -190 1: time;
+#X text 592 -176 2: minimum output val;
+#X text 592 -161 3: maximum output val;
+#X text 593 -139 e.g.:;
+#X text 625 -139 [mm-env 1000 500 3000];
+#X text 596 -89 which would last 1 second;
+#X text 596 -121 this may be useful for a filter sweep;
+#X text 596 -105 between 500 Hz and 3000 Hz;
+#X connect 12 0 11 0;
+#X connect 12 0 11 1;
+#X connect 14 0 17 0;
+#X connect 17 0 12 1;
+#X connect 18 0 12 0;
+#X connect 19 0 18 4;

@@ -1,0 +1,42 @@
+#N canvas 0 22 788 695 10;
+#X obj 163 -31 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 163 -4 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 163 23 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 186 22 float;
+#X text 253 -32 Frequency (Hz);
+#X text 183 -32 float;
+#X text 184 -5 float;
+#X text 253 -5 Attack - time to ramp a note on;
+#X obj 84 -36 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 84 65 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0 13
+-228856 -1 0;
+#X obj 163 73 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 183 72 signal;
+#X text 249 72 Envelope output (between [0 \, 1]);
+#X obj 44 -357 cnv 15 600 50 empty empty modular-muse_AR_envelope_generator
+20 12 0 18 -183872 -66577 0;
+#X text 68 -335 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj 164 -98 dac~;
+#X obj 164 -133 *~;
+#X text 200 -137 <- multiply the output by a sound source to create
+a volume envelope;
+#X obj 112 -207 osc~ 400;
+#X obj 237 -279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 236 -216 mm-ar~;
+#X text 253 19 Release - time to ramp back to 0;
+#X text 260 -280 <- trigger attack/release;
+#X text 278 -263 relase happens automatically after attack time;
+#X text 162 -67 AR (Attack \, Release) Envelope Generator;
+#X text 85 -67 mm-ar~;
+#X connect 16 0 15 0;
+#X connect 16 0 15 1;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 20 0 16 1;
