@@ -2,7 +2,7 @@
 #X obj 101 119 cnv 15 248 53 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 170 135 knob 32 32 20 10000 1 0 empty empty freq -4 -10 0 12
--262144 -1 -1 915 1;
+-262144 -1 -1 1449 1;
 #N canvas 79 157 686 390 karplus-strong 0;
 #X obj 245 291 line~;
 #X obj 194 371 *~;
@@ -79,7 +79,7 @@
 #X obj 20 202 random 1000;
 #X obj 120 266 pipe 5;
 #X obj 243 135 knob 32 32 0.1 30 0 0 empty empty decay -4 -10 0 12
--262144 -1 -1 1026 1;
+-262144 -1 -1 826 1;
 #X obj 310 135 knob 32 32 400 5000 0 0 empty empty bright -6 -10 0
 12 -262144 -1 -1 1078 1;
 #X obj 22 228 + 2000;
@@ -89,7 +89,7 @@
 #X obj 317 228 -;
 #X msg 304 206 5000;
 #X obj 308 181 t b f;
-#X obj 166 499 outlet~;
+#X obj 162 566 outlet~;
 #X obj 100 25 inlet;
 #X obj 151 25 inlet;
 #X obj 224 28 inlet;
@@ -100,9 +100,11 @@
 #X msg 169 77 200;
 #X obj 149 207 * 10;
 #X obj 317 250 / 5000;
+#X obj 160 454 *~ 3;
+#X obj 162 494 hip~ 5;
 #X connect 1 0 2 1;
 #X connect 1 0 30 0;
-#X connect 2 0 21 0;
+#X connect 2 0 32 0;
 #X connect 3 0 5 1;
 #X connect 4 0 8 0;
 #X connect 4 0 10 0;
@@ -138,4 +140,6 @@
 #X connect 29 0 1 0;
 #X connect 30 0 14 1;
 #X connect 31 0 15 0;
+#X connect 32 0 33 0;
+#X connect 33 0 21 0;
 #X coords 0 -1 1 1 250 75 1 100 100;

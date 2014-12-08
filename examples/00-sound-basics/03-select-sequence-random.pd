@@ -1,0 +1,24 @@
+#N canvas 446 95 737 573 10;
+#X obj 138 101 mm-vco~;
+#X obj 317 240 *~;
+#X obj 296 294 output~;
+#X text 347 245 <- multiply audio signal by another signal to control
+amplitude (volume);
+#X text 369 304 <- output to speakers;
+#X floatatom 149 35 5 36 96 0 - - -;
+#X text 186 34 <- click and drag;
+#X obj 408 101 mm-adsr~;
+#X obj 137 63 mtof;
+#X floatatom 137 82 5 0 0 0 - - -;
+#X text 172 8 <- click to set note number (60 is middle C);
+#X msg 138 9 60;
+#X msg 109 21 62;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 5 0 8 0;
+#X connect 7 0 1 1;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;

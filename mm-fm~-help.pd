@@ -8,7 +8,6 @@
 #X obj 154 -19 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
 ;
 #X text 177 -21 float;
-#X text 244 -51 Glide / portamento time;
 #X text 174 -84 float;
 #X text 174 -51 float;
 #X obj 75 49 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0 13
@@ -17,7 +16,6 @@
 ;
 #X text 174 56 signal;
 #X text 244 56 Audio output;
-#X text 244 -84 Frequency (Hz) (no effect on noise);
 #X obj 26 -519 cnv 15 600 50 empty empty modular-mus_fm-synthesis_waveform_generator
 20 12 0 18 -183872 -66577 0;
 #X text 50 -497 frequency modulation synthesis waveform generator;
@@ -26,8 +24,6 @@
 #X obj 154 11 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
 ;
 #X text 177 9 float;
-#X text 244 10 modulation index;
-#X text 244 -20 FM frequency ratio;
 #X obj 200 -176 dac~;
 #X obj 201 -201 *~;
 #X msg 358 -418 2.67;
@@ -41,11 +37,15 @@
 #X text 397 -419 <- non-integer ratios will sound more dissonant;
 #X text 381 -394 <- integer ratios will sound more harmonic;
 #X msg 347 -395 2;
-#X connect 22 0 21 0;
-#X connect 22 0 21 1;
-#X connect 23 0 25 2;
-#X connect 24 0 22 1;
-#X connect 25 0 22 0;
-#X connect 27 0 25 3;
-#X connect 28 0 25 3;
-#X connect 32 0 25 2;
+#X text 244 10 modulation index (0 - 10);
+#X text 244 -20 FM frequency ratio (0.1 - 6);
+#X text 244 -51 Glide / portamento time (10 - 500 ms);
+#X text 244 -84 Frequency (Hz) (20 - 10 \, 0 Hz);
+#X connect 18 0 17 0;
+#X connect 18 0 17 1;
+#X connect 19 0 21 2;
+#X connect 20 0 18 1;
+#X connect 21 0 18 0;
+#X connect 23 0 21 3;
+#X connect 24 0 21 3;
+#X connect 28 0 21 2;
