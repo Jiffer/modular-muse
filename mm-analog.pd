@@ -26,8 +26,8 @@
 #X obj 397 93 inlet;
 #X obj 33 234 mm-automap;
 #X obj 27 336 mm-automap;
-#X obj 33 272 resample 70;
 #X obj 128 354 outlet;
+#X obj 40 280 resample 70;
 #X connect 1 0 22 3;
 #X connect 1 0 23 3;
 #X connect 2 0 23 1;
@@ -49,13 +49,13 @@
 #X connect 13 0 15 0;
 #X connect 14 0 22 0;
 #X connect 14 0 23 0;
-#X connect 14 0 25 0;
+#X connect 14 0 24 0;
 #X connect 15 0 16 0;
 #X connect 16 0 17 0;
 #X connect 17 0 11 0;
 #X connect 17 0 7 0;
 #X connect 21 0 1 0;
-#X connect 22 0 24 0;
+#X connect 22 0 25 0;
+#X connect 22 0 19 0;
 #X connect 23 0 6 0;
-#X connect 24 0 19 0;
 #X coords -1 -1 1 1 110 75 1 100 200;

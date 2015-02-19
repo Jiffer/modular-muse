@@ -1,5 +1,5 @@
-#N canvas 122 49 1046 597 10;
-#X msg 629 53 set sweep;
+#N canvas 153 105 1020 597 10;
+#X msg 644 102 set sweep;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array sweep 100 float 3;
 #A 0 0.904761 0.919047 0.919047 0.919047 0.919047 0.919047 0.919047
@@ -17,20 +17,20 @@
 -0.752392 -0.79525 -0.852393 -0.880965 -0.909536 -0.923822 -0.966679
 -0.966679 -0.980965;
 #X coords 0 1 99 -1 200 140 1;
-#X restore 709 49 graph;
-#X obj 629 26 loadbang;
-#X obj 188 239 mm-filter~;
-#X obj 93 104 mm-vco~;
-#X obj 188 342 output~;
-#X obj 370 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 724 98 graph;
+#X obj 644 75 loadbang;
+#X obj 203 288 mm-filter~;
+#X obj 108 153 mm-vco~;
+#X obj 203 391 output~;
+#X obj 385 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 370 82 mm-readarray 200 0 5000;
-#X text 308 -29 - Put > message \; [set myArrayName[;
-#X text 307 -62 - [mm-readarray time(ms) min-output max-output];
-#X text 308 -46 - Put > array \; give it a name (i.e. myArrayName)
+#X obj 385 131 mm-readarray 200 0 5000;
+#X text 181 -13 - Put > message \; [set myArrayName[;
+#X text 180 -62 - [mm-readarray time(ms) min-output max-output];
+#X text 181 -44 - Put > array \; give it a name (i.e. myArrayName)
 ;
-#X text 308 -13 - click on the message to "set" the name;
-#X obj 253 55 loadbang;
+#X text 181 20 - click on the message to "set" the name;
+#X obj 268 104 loadbang;
 #X connect 0 0 7 4;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;

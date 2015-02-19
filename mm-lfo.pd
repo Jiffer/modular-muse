@@ -21,14 +21,14 @@
 #X msg 364 300 0.5;
 #X obj 215 184 osc~;
 #X obj 218 133 knob 32 32 0.05 20 0 0 empty empty Period -5 -10 0 12
--262144 -1 -1 300 1;
-#X obj 168 120 tgl 25 0 empty empty on 4 30 0 14 -99865 -4034 -1 1
+-262144 -1 -1 100 1;
+#X obj 168 120 tgl 25 0 empty empty on 4 30 0 14 -99865 -4034 -1 0
 1;
 #X obj 148 71 inlet;
 #X obj 334 220 f \$2;
 #X obj 368 220 f \$3;
 #X obj 239 210 f \$1;
-#X obj 136 206 metro 10;
+#X obj 136 206 metro 20;
 #X connect 1 0 3 0;
 #X connect 2 0 21 0;
 #X connect 3 0 9 0;
