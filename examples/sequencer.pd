@@ -25,14 +25,14 @@
 #X obj 741 307 mm-fm~;
 #X obj 745 237 + 48;
 #X obj 263 -55 hsl 128 15 20 400 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3300 1;
+-1 -1 0 1;
 #X floatatom 260 -34 5 0 0 0 - - -;
 #X obj 195 34 r \$0-play;
 #X obj 261 -12 s \$0-tempo;
 #X obj 367 33 r \$0-tempo;
 #X obj 917 28 r \$0-tempo;
 #X obj 745 32 r \$0-play;
-#X obj 192 -55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 192 -55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 192 -34 s \$0-play;
 #X obj 182 925 dac~;

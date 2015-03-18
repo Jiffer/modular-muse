@@ -1,0 +1,38 @@
+#N canvas 446 95 737 573 10;
+#X obj 126 272 mm-vco~;
+#X obj 305 411 *~;
+#X obj 284 465 output~;
+#X text 335 416 <- multiply audio signal by another signal to control
+amplitude (volume);
+#X text 357 475 <- output to speakers;
+#X obj 396 272 mm-adsr~;
+#X obj 125 234 mtof;
+#X floatatom 125 253 5 0 0 0 - - -;
+#X obj 162 93 metro 200;
+#X floatatom 162 141 5 0 0 0 - - -;
+#X obj 161 73 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 187 72 <- start metronome;
+#X text 227 92 <- send a bang every 200 ms;
+#X obj 396 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 416 247 <- note on/off;
+#X text 162 23 Generates random numbers to select from a list of notes
+;
+#X obj 162 117 random 24;
+#X text 229 117 <- generate a random number from [0 \, 23];
+#X obj 162 166 + 60;
+#X text 202 168 <= offset by 60 (60 is MIDI for middle C);
+#X text 163 232 <= convert to frequency;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 5 0 1 1;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 16 0;
+#X connect 9 0 18 0;
+#X connect 10 0 8 0;
+#X connect 13 0 5 0;
+#X connect 16 0 9 0;
+#X connect 18 0 6 0;

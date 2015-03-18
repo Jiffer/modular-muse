@@ -2,7 +2,7 @@
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-array 441000 float 0;
 #X coords 0 1 440999 -1 160 100 1 0 0;
-#X restore 351 -361 graph;
+#X restore 427 -352 graph;
 #X obj 184 4 dac~;
 #N canvas 475 134 450 300 record 0;
 #X msg 141 83 bang;
@@ -22,8 +22,8 @@
 #X connect 6 0 0 0;
 #X connect 7 0 5 0;
 #X connect 8 0 4 0;
-#X restore 281 -277 pd record;
-#X obj 281 -320 bng 30 250 50 0 empty empty empty 17 7 0 10 -258113
+#X restore 221 -247 pd record;
+#X obj 221 -290 bng 30 250 50 0 empty empty empty 17 7 0 10 -258113
 -33289 -1;
 #N canvas 389 108 690 564 scrub 0;
 #X obj 110 230 line~;
@@ -36,7 +36,7 @@
 #X obj 82 351 outlet~;
 #X obj 110 52 inlet;
 #X obj 106 138 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7500 1;
+-1 -1 0 1;
 #X obj 82 281 mm-bypass~;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
@@ -60,17 +60,17 @@
 #X obj 122 400 tabread4~ \$0-array;
 #X floatatom 104 168 5 0 0 0 - - -;
 #X obj 104 131 knob 32 32 -2 2 0 0 empty empty spd 0 -8 0 8 -262144
--1 -1 2400 1;
+-1 -1 2325 1;
 #X obj 292 104 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 130 544 outlet~;
 #X obj 167 173 hsl 100 15 0 1000 0 0 empty empty pos -2 -8 0 10 -262144
--1 -1 4100 1;
+-1 -1 0 1;
 #X obj 168 145 hsl 100 15 1 100 0 0 empty empty siz -2 -8 0 10 -262144
--1 -1 900 1;
+-1 -1 0 1;
 #X obj -51 245 abs;
 #X obj 170 116 hsl 100 15 0 500 0 0 empty empty randm -2 -8 0 10 -262144
--1 -1 2700 1;
+-1 -1 0 1;
 #X obj 2 73 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj -8 24 loadbang;
@@ -176,17 +176,19 @@
 #X connect 40 0 15 0;
 #X coords 0 -1 1 1 230 90 1 100 100;
 #X restore 289 -139 pd grains;
-#X obj 31 -374 modular-mus;
-#X obj 219 -381 mm-digital 0;
+#X obj 219 -371 mm-digital 0;
 #X obj 63 -190 mm-analog 0 0 1000;
 #X obj 433 -234 mm-analog 1 0 100;
 #X obj 547 -234 mm-analog 2 0 1000;
+#X obj 220 -324 sel 1;
+#X obj 31 -374 mm-clippys;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X connect 4 0 1 1;
 #X connect 5 0 1 0;
 #X connect 5 0 1 1;
-#X connect 7 2 3 0;
-#X connect 8 0 4 0;
-#X connect 9 0 5 2;
-#X connect 10 0 5 3;
+#X connect 6 0 10 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 2;
+#X connect 9 0 5 3;
+#X connect 10 0 3 0;

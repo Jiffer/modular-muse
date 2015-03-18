@@ -15,6 +15,7 @@ amplitude (volume);
 #X text 165 71 <- click to set note (60 = middle C);
 #X msg 111 29 64;
 #X msg 98 8 65;
+#X text 174 126 <- convert to frequency;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;

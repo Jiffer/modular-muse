@@ -1,41 +1,42 @@
-#N canvas 446 95 737 573 10;
-#X obj 126 322 mm-vco~;
-#X obj 305 461 *~;
-#X obj 284 515 output~;
-#X text 335 466 <- multiply audio signal by another signal to control
+#N canvas 446 95 739 634 10;
+#X obj 126 362 mm-vco~;
+#X obj 305 501 *~;
+#X obj 284 555 output~;
+#X text 335 506 <- multiply audio signal by another signal to control
 amplitude (volume);
-#X text 357 525 <- output to speakers;
-#X obj 396 322 mm-adsr~;
-#X obj 125 284 mtof;
-#X floatatom 125 303 5 0 0 0 - - -;
-#X msg 98 163 60;
-#X msg 129 163 62;
-#X msg 162 163 64;
-#X msg 193 163 65;
-#X msg 223 162 67;
-#X msg 257 163 69;
-#X msg 288 163 71;
-#X msg 319 163 72;
-#X text 343 132 <- send a bang out outlet that matches input;
-#X text 350 162 <- major scale starting at middle C;
-#X obj 396 298 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 357 565 <- output to speakers;
+#X obj 396 362 mm-adsr~;
+#X obj 125 324 mtof;
+#X floatatom 125 343 5 0 0 0 - - -;
+#X msg 98 203 60;
+#X msg 129 203 62;
+#X msg 162 203 64;
+#X msg 193 203 65;
+#X msg 223 202 67;
+#X msg 257 203 69;
+#X msg 288 203 71;
+#X msg 319 203 72;
+#X text 343 172 <- send a bang out outlet that matches input;
+#X text 350 202 <- major scale starting at middle C;
+#X obj 396 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 416 297 <- note on/off;
-#X obj 130 81 key;
-#X floatatom 130 104 5 0 0 0 - - -;
-#X obj 130 133 sel 97 115 100 102 106 107 108 59;
-#X text 131 37 the [key] object generates a number;
-#X text 131 54 the [sel] object routes the number to set the pitch
+#X text 416 337 <- note on/off;
+#X obj 130 121 key;
+#X floatatom 130 144 5 0 0 0 - - -;
+#X obj 130 173 sel 97 115 100 102 106 107 108 59;
+#X text 131 77 the [key] object generates a number;
+#X text 131 94 the [sel] object routes the number to set the pitch
 ;
-#X msg 407 267 0;
-#X msg 389 224 1;
-#X obj 387 194 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 407 307 0;
+#X msg 389 264 1;
+#X obj 387 234 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 408 244 pipe 80;
-#X text 434 224 <- send a 1;
-#X text 462 243 <- wait 80 ms;
-#X text 463 267 <- send a 0;
-#X text 130 5 keys "asdf jkl \; " play a major scale;
+#X obj 408 284 pipe 80;
+#X text 434 264 <- send a 1;
+#X text 462 283 <- wait 80 ms;
+#X text 463 307 <- send a 0;
+#X text 130 45 keys "asdf jkl \; " play a major scale;
+#X text 129 28 Uses the computer keyboard as a musical interface;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;

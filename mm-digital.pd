@@ -1,43 +1,22 @@
 #N canvas 751 90 389 434 10;
-#X text 98 92 input data;
-#X obj 154 331 outlet;
-#X obj 183 358 outlet;
-#X obj 102 252 outlet;
-#X obj 156 175 sel 0 1;
-#X text 200 331 bang on press;
-#X text 228 357 bang on release;
-#X text 145 253 buttton value;
-#X obj 102 109 r D\$1;
-#X obj 101 215 cnv 15 98 22 empty empty empty 20 12 0 14 -204786 -66577
+#X text 78 50 input data;
+#X obj 82 67 r D\$1;
+#X obj 101 215 cnv 15 78 22 empty empty empty 20 12 0 14 -204786 -66577
 0;
-#X obj 154 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 183 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 102 220 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 104 177 -;
+#X msg 89 157 1;
+#X obj 104 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 146 216 0;
-#X text 175 215 1;
-#X obj 152 142 debounce 1;
-#X obj 124 177 -;
-#X msg 109 157 1;
-#X obj 127 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 111 131 t b f;
-#X obj 127 280 outlet;
-#X text 171 277 button value inverse;
-#X connect 4 0 10 0;
-#X connect 4 1 11 0;
-#X connect 8 0 12 0;
-#X connect 8 0 15 0;
-#X connect 8 0 19 0;
-#X connect 10 0 1 0;
-#X connect 11 0 2 0;
-#X connect 12 0 3 0;
-#X connect 15 0 4 0;
-#X connect 16 0 18 0;
-#X connect 17 0 16 0;
-#X connect 18 0 20 0;
-#X connect 19 0 17 0;
-#X connect 19 1 16 1;
-#X coords -1 -1 1 1 100 40 1 100 200;
+#X obj 91 131 t b f;
+#X obj 104 280 outlet;
+#X text 148 277 button value inverse;
+#X obj 85 100 change;
+#X text 144 132 <- invert it since hw uses a pull up;
+#X connect 1 0 9 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 6 1 3 1;
+#X connect 9 0 6 0;
+#X coords -1 -1 1 1 80 40 1 100 200;
