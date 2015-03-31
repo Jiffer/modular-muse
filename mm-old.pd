@@ -386,7 +386,7 @@
 #X obj 285 219 s \$0-toArduino;
 #X text -2 52 stop scanning even if version comes back late;
 #X obj 23 24 pduino/arduino 2;
-#X msg 47 173 open \$1;
+#X msg 47 173 open 4;
 #X connect 0 0 55 0;
 #X connect 0 1 56 0;
 #X connect 2 0 1 0;
