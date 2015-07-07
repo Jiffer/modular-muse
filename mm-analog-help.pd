@@ -1,4 +1,4 @@
-#N canvas 0 22 889 567 10;
+#N canvas 0 22 894 754 10;
 #X obj 82 -94 cnv 15 600 470 empty empty Analog_Inputs 20 12 0 14 -261780
 -66577 0;
 #X obj 119 -52 mm-analog 0;
@@ -52,3 +52,37 @@ change;
 12 0 18 -183872 -66577 0;
 #X text 107 -128 a modular hardware interfaces and audio manipulation
 toolkit;
+#N canvas 228 99 703 329 pitch-example 0;
+#X obj 108 26 mm-analog 0 60 72;
+#X obj 108 106 mtof;
+#X obj 108 135 mm-waves~;
+#X obj 108 237 output~;
+#X text 324 28 analog input 0 will be mapped to the range 60 to 72
+which in MIDI is one octave starting at middle C.;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X restore 88 423 pd pitch-example;
+#N canvas 288 253 628 478 volume-example 0;
+#X obj 53 81 mm-pwm~;
+#X obj 179 246 *~;
+#X obj 347 83 mm-analog 0 0 1;
+#X obj 179 278 dac~;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 1 1;
+#X restore 203 423 pd volume-example;
+#N canvas 360 156 712 339 filter-example 0;
+#X obj 62 97 mm-fm~;
+#X obj 62 196 mm-filter~;
+#X obj 374 116 mm-analog 0 100 3000;
+#X obj 61 300 output~;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 1 3;
+#X restore 324 424 pd filter-example;
+#X text 89 398 open the following sub-patches to see some examples
+;

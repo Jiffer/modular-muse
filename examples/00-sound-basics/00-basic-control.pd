@@ -1,30 +1,38 @@
 #N canvas 446 95 737 573 10;
-#X obj 138 101 mm-vco~;
-#X obj 317 240 *~;
-#X msg 109 51 400;
-#X msg 138 39 500;
-#X obj 296 294 output~;
-#X msg 461 166 1;
-#X msg 462 190 0;
-#X floatatom 416 213 5 0 0 0 - - -;
-#X obj 416 66 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 247 350 *~;
+#X msg 39 161 400;
+#X msg 68 149 500;
+#X obj 226 404 output~;
+#X msg 391 276 1;
+#X msg 392 300 0;
+#X floatatom 346 323 5 0 0 0 - - -;
+#X obj 346 176 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X text 496 190 <- multiply audio by 0;
-#X text 497 165 <- multiply audio by 1;
-#X text 437 138 <- volume control \, outputs between [0 \, 1];
-#X text 172 38 <- click to set frequency;
-#X text 347 245 <- multiply audio signal by another signal to control
+#X text 426 300 <- multiply audio by 0;
+#X text 427 275 <- multiply audio by 1;
+#X text 367 248 <- volume control \, outputs between [0 \, 1];
+#X text 102 148 <- click to set frequency;
+#X text 277 355 <- multiply audio signal by another signal to control
 amplitude (volume);
-#X text 369 304 <- output to speakers;
-#X floatatom 149 65 5 0 0 0 - - -;
-#X text 186 64 <- click and drag;
-#X connect 0 0 1 0;
-#X connect 1 0 4 0;
-#X connect 1 0 4 1;
-#X connect 2 0 0 0;
-#X connect 3 0 0 0;
-#X connect 5 0 7 0;
-#X connect 6 0 7 0;
-#X connect 7 0 1 1;
-#X connect 8 0 7 0;
-#X connect 15 0 0 0;
+#X text 299 414 <- output to speakers;
+#X floatatom 79 175 5 0 0 0 - - -;
+#X text 116 174 <- click and drag;
+#X text 389 19;
+#X text 234 7 The modular-muse objects can be controlled directly from
+their GUI or by sending values or signals to the inlets. As with other
+Pd objects \, a ~ indicates the object produces an audio rate signal.
+;
+#X obj 68 211 mm-waves~;
+#X text 234 68 Audio signals can by manipulated with arithmetic operations
+with other signals. This example multiplies the output of the waves~
+object to control the volume.;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 1 0 18 0;
+#X connect 2 0 18 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 1;
+#X connect 7 0 6 0;
+#X connect 14 0 18 0;
+#X connect 18 0 0 0;

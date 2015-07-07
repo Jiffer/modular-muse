@@ -1,5 +1,5 @@
 #N canvas 122 49 1046 597 10;
-#X msg 629 53 set sweep;
+#X msg 629 22 set sweep;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array sweep 100 float 3;
 #A 0 -0.138103 -0.138103 -0.138103 -0.138103 -0.138103 -0.0523882 -0.0238166
@@ -17,8 +17,8 @@
 -0.309533 -0.338104 -0.35239 -0.395247 -0.409533 -0.423819 -0.466676
 -0.495248 -0.552391;
 #X coords 0 1 99 -1 200 140 1;
-#X restore 709 49 graph;
-#X obj 629 26 loadbang;
+#X restore 717 55 graph;
+#X obj 629 -4 loadbang;
 #X obj 188 199 mm-filter~;
 #X obj 93 104 mm-vco~;
 #X obj 216 432 output~;
@@ -47,31 +47,32 @@
 -0.785706 -0.785706 -0.799991 -0.799991 -0.814277 -0.828562 -0.857134
 -0.871419 -0.871419 -0.885705 -0.914276;
 #X coords 0 1 99 -1 200 140 1;
-#X restore 772 270 graph;
-#X msg 745 240 set level;
-#X obj 745 218 loadbang;
+#X restore 791 282 graph;
+#X msg 738 248 set level;
+#X obj 738 226 loadbang;
 #X obj 244 380 *~;
-#X obj 477 268 mm-readarray 2000 0 1;
-#X floatatom 473 391 5 0 0 0 - - -;
-#X obj 370 82 mm-readarray 400 500 5000;
-#X text 479 59;
+#X floatatom 472 411 5 0 0 0 - - -;
 #X text 389 42 in 400ms - read through array "sweep";
 #X text 390 58 min val 500 \, max val 5000;
-#X text 489 230 in 2000ms (2 sec) read through "level";
-#X text 492 247 min val 0 \, max val 1;
-#X connect 0 0 18 4;
+#X text 488 250 in 2000ms (2 sec) read through "level";
+#X text 491 267 min val 0 \, max val 1;
+#X obj 370 82 mm-draw~ 400 500 5000;
+#X obj 476 288 mm-draw~ 2000 0 1;
+#X text 808 243 <- use array level (below);
+#X text 694 20 <- use array "sweep" (below);
+#X connect 0 0 21 4;
 #X connect 2 0 0 0;
 #X connect 3 0 15 0;
 #X connect 4 0 3 0;
-#X connect 6 0 16 0;
-#X connect 6 0 18 0;
+#X connect 6 0 21 0;
+#X connect 6 0 22 0;
 #X connect 11 0 4 2;
 #X connect 11 0 4 4;
 #X connect 11 0 4 6;
-#X connect 13 0 16 4;
+#X connect 13 0 22 4;
 #X connect 14 0 13 0;
 #X connect 15 0 5 0;
 #X connect 15 0 5 1;
-#X connect 16 0 15 1;
-#X connect 16 0 17 0;
-#X connect 18 0 3 3;
+#X connect 21 0 3 3;
+#X connect 22 0 15 1;
+#X connect 22 0 16 0;

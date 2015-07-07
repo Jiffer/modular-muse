@@ -471,6 +471,7 @@ outlet for each value you are sending between begin/end chars;
 #X connect 101 0 115 0;
 #X connect 102 0 115 0;
 #X connect 103 0 114 1;
+#X connect 103 0 114 0;
 #X connect 104 0 105 0;
 #X connect 105 0 115 0;
 #X connect 108 0 109 0;

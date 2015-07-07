@@ -1,31 +1,28 @@
 #N canvas 99 22 998 756 12;
-#X obj 81 715 mm-analog 0;
-#X obj 82 862 mm-out 0;
-#X obj 85 825 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 82 727 mm-analog 0;
+#X obj 83 874 mm-out 0;
+#X obj 86 837 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 84 2465 mm-reverb~;
 #X obj 85 2380 mm-overdrive~;
 #X obj 85 2626 mm-tremolo~;
 #X obj 84 2547 mm-filter~;
-#X obj 92 843 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 93 855 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 81 629 mm-digital 0;
+#X obj 82 641 mm-digital 0;
 #X obj 80 1371 cnv 15 600 50 empty empty Sound_Control 20 12 0 18 -261269
 -66577 0;
 #X obj 72 -77 cnv 15 600 50 empty empty modular-mus 20 12 0 18 -183872
 -66577 0;
 #X text 96 -55 a modular hardware interfaces and audio manipulation
 toolkit;
-#X text 189 404 Analog inputs: A0-A7 (aka pins 14-21);
-#X text 188 420 Digital inputs: 2 \, 4 \, 7 \, 8 \, 12 \, 13;
-#X text 176 388 Arduino pins are configured as follows:;
-#X text 189 439 Outputs: 3 \, 5 \, 6 \, 9 \, 10 \, 11;
+#X text 179 372 Arduino pins are configured as follows:;
 #X text 245 -25 The modular-mus object communicates with Arduino via
 the pduino object. The Arduino should be running the "standard-firmata"
 sketch (available in Arduino via Examples menu).;
-#X obj 80 566 cnv 15 600 50 empty empty Interface_Objects 20 12 0 18
+#X obj 81 578 cnv 15 600 50 empty empty Interface_Objects 20 12 0 18
 -183872 -66577 0;
-#X text 176 480 Following you will find a list of all the modular-muse
+#X text 177 492 Following you will find a list of all the modular-muse
 objects. You can go into "Edit Mode" and copy them to add them to another
 patch.;
 #X obj 76 100 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
@@ -36,71 +33,15 @@ patch.;
 -1 0;
 #X obj 154 170 cnv 17 3 110 empty empty empty 5 9 0 16 -228856 -162280
 0;
-#X text 174 169 port #;
-#X text 244 169 Select which port to open;
-#X text 174 199 devices;
-#X text 244 199 list which serial ports are available;
-#X text 174 229 scan;
-#X text 244 229 scan ports and automatically open any arduino running
-firmata;
-#X text 174 269 connected;
-#X text 244 269 indicates when Arduino successfully connects via scanning
-;
-#X obj 76 311 cnv 3 550 3 empty \$0-pddp.cnv.inlets more_info 8 12
+#X text 177 209 port #;
+#X text 243 209 Select which port to open;
+#X text 177 239 devices;
+#X obj 76 323 cnv 3 550 3 empty \$0-pddp.cnv.inlets more_info 8 12
 0 13 -228856 -1 0;
-#X text 176 318 modular-mus can only be connected in one patch at a
+#X text 177 422 modular-mus can only be connected in one patch at a
 time. However messages from that device and connected modular-mus object
 will be sent to all modular-mus interface objects (see below);
-#X text 114 587 modular-mus input and output interface objects;
-#N canvas 804 358 450 300 basic 0;
-#X obj 69 142 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 68 43 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X obj 68 87 s D3~;
-#X floatatom 121 38 5 50 2000 0 - - -;
-#N canvas 402 342 450 300 blink 0;
-#X msg -232 117 0;
-#X msg -270 118 1;
-#X obj -272 43 metro 500;
-#X obj -248 93 pipe 40;
-#X obj -274 0 inlet;
-#X obj -207 -2 inlet;
-#X obj -259 164 outlet;
-#X connect 0 0 6 0;
-#X connect 1 0 6 0;
-#X connect 2 0 1 0;
-#X connect 2 0 3 0;
-#X connect 3 0 0 0;
-#X connect 4 0 2 0;
-#X connect 5 0 2 1;
-#X restore 68 63 pd blink;
-#N canvas 531 284 450 300 fade 0;
-#X obj -1145 44 osc~;
-#X obj -1144 105 snapshot~ 20;
-#X obj -1145 65 *~ 0.5;
-#X obj -1145 84 +~ 0.5;
-#X obj -1157 0 metro 20;
-#X obj -1157 -34 inlet;
-#X obj -1093 -34 inlet;
-#X obj -1144 138 outlet;
-#X connect 0 0 2 0;
-#X connect 1 0 7 0;
-#X connect 2 0 3 0;
-#X connect 3 0 1 0;
-#X connect 4 0 1 0;
-#X connect 5 0 4 0;
-#X connect 6 0 0 0;
-#X restore 69 162 pd fade;
-#X floatatom 115 139 5 0 0 0 - - -;
-#X obj 69 185 s D5~;
-#X connect 0 0 5 0;
-#X connect 1 0 4 0;
-#X connect 3 0 4 1;
-#X connect 4 0 2 0;
-#X connect 5 0 7 0;
-#X connect 6 0 5 1;
-#X restore 80 537 pd basic examples;
+#X text 114 596 modular-mus input and output interface objects;
 #N canvas 267 146 924 370 mm-test-connections 0;
 #X obj 445 12 mm-digital 3;
 #X obj 333 11 mm-digital 2;
@@ -154,30 +95,24 @@ will be sent to all modular-mus interface objects (see below);
 #X connect 24 0 30 0;
 #X connect 25 0 30 0;
 #X restore 247 64 pd mm-test-connections;
-#X text 258 711 mm-analog: analog input object. Use to read inputs
+#X text 259 723 mm-analog: analog input object. Use to read inputs
 form the analog pins. Use with analog modules including knobs \, sliders
 \, distance and light sensors. See help for more info.;
-#X text 258 850 mm-out: output object. Use to send signals to outputs
+#X text 259 862 mm-out: output object. Use to send signals to outputs
 to digital and PWM outputs. Use with output modules such as LEDs and
 motor boards. See help for more info.;
 #X text 258 1428 mm-gain~;
 #X text 338 1428 volume control and mute.;
-#X text 174 107 open;
-#X msg 282 131 open 23;
-#X text 344 129 to open port 23;
-#X text 244 108 open command to pduino object \,;
-#X text 244 129 i.e.;
+#X msg 308 130 open 23;
+#X text 384 127 to open port 23;
+#X text 270 128 i.e.;
 #X text 257 1544 mm-mix2~;
 #X text 334 1544 mix 2 audio signals;
-#X text 338 997 mm-vco~;
-#X text 415 997 "voltage controlled oscillator" - waveform generator
-;
-#X text 419 1017 enable/disable waveforms with toggle boxes;
 #X text 347 1604 mm-adsr~;
 #X text 424 1604 ADSR (Attack \, Decay \, Sustain \, Release) Envelope
 Generator;
-#X text 352 1962 mm-lfo;
-#X text 422 1961 Low Frequency Oscillator - sinusoidal control signal
+#X text 352 1922 mm-lfo;
+#X text 422 1921 Low Frequency Oscillator - sinusoidal control signal
 ;
 #X obj 84 2238 cnv 15 600 50 empty empty Audio_effects 20 12 0 18 -261234
 -66577 0;
@@ -194,13 +129,12 @@ Generator;
 #X obj 85 1180 mm-fm~;
 #X obj 83 1553 mm-mix2~;
 #X obj 82 1610 mm-adsr~;
-#X obj 82 1966 mm-lfo 3 200 1000;
-#X text 621 2042 mm-seq;
-#X text 711 2044 16 step sequencer;
+#X obj 82 1926 mm-lfo 3 200 1000;
+#X text 621 2033 mm-seq;
+#X text 711 2035 16 step sequencer;
 #X obj 84 1434 mm-gain~;
-#X obj 82 2051 mm-seq 30 50;
-#X obj 83 1004 mm-vco~;
-#X text 260 624 mm-digital: digital input object. Use to read inputs
+#X obj 82 2042 mm-seq 30 50;
+#X text 261 636 mm-digital: digital input object. Use to read inputs
 from the digital pins. Use with digital modules such as buttons and
 switches. See help for more info.;
 #X obj 86 1265 mm-pluck~;
@@ -221,10 +155,31 @@ object);
 #X obj 82 1691 mm-ar~;
 #X text 348 1687 mm-ar~;
 #X text 427 1687 AR (Attack \, Release) Envelope Generator;
-#X obj 82 1775 mm-env;
-#X text 369 1788 mm-env;
-#X text 448 1788 Array based Envelope Generator;
-#X text 447 1805 draw in the array to create a "gesture";
+#X text 481 1794 Array based Envelope Generator;
+#X text 481 1812 draw in the array to create a "gesture";
+#X text 174 107 serial port;
+#X text 267 106 open command to comport object;
+#X text 509 127 - see comport for more;
+#X text 178 177 open;
+#X text 243 175 Open (or reopen) port specified by port # box;
+#X text 242 238 list which serial ports are available (see list in
+Pd console window);
+#X text 242 275 close current connection;
+#X text 177 274 close;
+#X text 192 388 Analog inputs: A0-A7;
+#X text 191 404 Digital inputs: 2-13;
+#X text 175 325 The arduino must be loaded with the Sound Clippys firmware
+to communicate properly (see arduino code folder in this zip file)
+;
+#X text 259 839 [not available with default Sound Clippys Arduino code]
+;
+#X obj 83 1004 mm-waves~;
+#X text 337 997 mm-waves~;
+#X text 415 997 waveform generator - sine \, triangle \, square \,
+sawtooth and noise waveforms;
+#X obj 81 1782 mm-draw~;
+#X text 369 1795 mm-draw~;
+#X text 480 1837 see help for details;
 #X connect 2 0 1 0;
 #X connect 7 0 1 0;
 #X coords 0 756 1 755 150 110 0;

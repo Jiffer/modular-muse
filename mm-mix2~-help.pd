@@ -1,4 +1,4 @@
-#N canvas 323 146 652 449 12;
+#N canvas 323 146 670 621 12;
 #X obj -283 33 cnv 15 600 50 empty empty modular-mus_2_channel_mixer
 20 12 0 18 -183872 -66577 0;
 #X text -259 55 a modular hardware interfaces and audio manipulation
@@ -35,6 +35,19 @@ toolkit;
 #X obj -100 216 *~;
 #X obj -57 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X text -248 482 examples:;
+#N canvas 196 345 839 382 mix-two-with-analog-input 0;
+#X obj 49 95 mm-pwm~;
+#X obj 323 95 mm-waves~;
+#X obj 247 249 mm-mix2~;
+#X obj 248 318 output~;
+#X obj 432 206 mm-analog 0;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 4 0 2 2;
+#X restore -245 517 pd mix-two-with-analog-input;
 #X connect 2 0 25 0;
 #X connect 20 0 2 0;
 #X connect 21 0 2 1;

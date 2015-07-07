@@ -1,0 +1,140 @@
+#N canvas 159 58 964 660 10;
+#X obj 219 413 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 219 440 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 219 467 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 242 466 float;
+#X text 240 439 float;
+#X obj 140 408 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+13 -228856 -1 0;
+#X obj 140 529 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 219 537 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 239 536 signal;
+#X obj 64 -337 cnv 15 600 50 empty empty modular-muse_array_based_envelope
+20 12 0 18 -183872 -66577 0;
+#X text 88 -315 a modular hardware interfaces and audio manipulation
+toolkit;
+#X obj 216 225 dac~;
+#X obj 315 -12 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 55 53 mm-vco~;
+#X obj 217 21 loadbang;
+#X text 239 412 bang;
+#X text 306 438 time in milliseconds to "play" the gesture;
+#X obj 219 494 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 242 493 float;
+#X text 306 462 min value (bottom of the graph);
+#X text 306 489 max value (top of the graph);
+#X text 213 265 array (graph) based envelope;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array my_env 100 float 3;
+#A 0 0.728564 0.742849 0.742849 0.742849 0.742849 0.742849 0.749992
+0.755349 0.760706 0.766063 0.771421 0.782135 0.792849 0.797611 0.802373
+0.807135 0.814278 0.821421 0.828564 0.835707 0.84285 0.849993 0.857135
+0.864278 0.871421 0.874993 0.878564 0.882136 0.885707 0.89285 0.896421
+0.899993 0.907136 0.910707 0.914279 0.91785 0.921422 0.921422 0.921422
+0.921422 0.921422 0.921422 0.921422 0.921422 0.921422 0.91785 0.914279
+0.903564 0.89285 0.878564 0.864278 0.849993 0.835707 0.814278 0.799992
+0.785706 0.771421 0.757135 0.735706 0.714277 0.692849 0.685706 0.678563
+0.657134 0.642848 0.635705 0.614277 0.599991 0.592848 0.585705 0.571419
+0.542848 0.535705 0.521419 0.492847 0.485705 0.47499 0.464276 0.44999
+0.439276 0.428561 0.414276 0.392847 0.378561 0.357132 0.335704 0.321418
+0.292846 0.27856 0.264275 0.257132 0.22856 0.207131 0.185703 0.157131
+0.107131 0.0785592 0.0499876 0.00713015 -0.0214415;
+#X coords 0 1 99 0 200 140 1 0 0;
+#X restore 485 -255 graph;
+#X text 353 -5 comment;
+#X text 336 -19 <- trigger (read through the array);
+#X obj 314 51 mm-draw~ 1000 0 1;
+#X msg 582 27 set my_env;
+#X obj 216 190 *~;
+#X text 265 178 <- multiply the output by a sound source to create
+a volume envelope;
+#X obj 582 4 loadbang;
+#X text 136 266 mm-draw~;
+#X text 159 313 1: time (how fast to read the array);
+#X text 158 327 2: minimum output val (bottom of the graph);
+#X text 158 342 3: maximum output val (top of the graph);
+#X text 159 363 e.g. [mm-draw 1000 0 1] (as above \, in 1 second go
+between 0 and 1 based on the drawn values in the array;
+#X text 305 413 trigger envelope;
+#X text 72 -257 The [mm-draw~] lets you draw changes over time. You
+can specify the the top and bottom value and the length of time to
+read through the drawing when triggered.;
+#X text 70 -194 Use this object to create custom envelopes for sound
+paramters like volume \, pitch \, filter cutoff \, etc.;
+#X text 70 -142 To use:;
+#X text 122 -142 add the [mm-draw~[ object with desired settings (see
+creation arguments below). Put a message object with [set name< (see
+example below with my_env) specifying array name.;
+#X text 120 -86 Create a new array (put > array) and name it to match
+the "set" message.;
+#X text 119 -57 Draw in the array a change in value over time;
+#X text 642 6 <- load automatically when patch opens;
+#X text 659 28 <- read array "my_env";
+#X obj 132 284 cnv 3 400 3 empty \$0-pddp.cnv.inlets creation_arguments
+8 12 0 13 -228856 -1 0;
+#X text 302 535 Envelope output (audio rate);
+#X obj 219 569 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 239 568 signal;
+#X text 302 567 Envelope output (control rate);
+#N canvas 781 450 450 300 filter-example 0;
+#X msg 644 102 set sweep;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sweep 100 float 3;
+#A 0 0.97619 0.97619 0.983333 0.990475 0.990475 0.990475 0.990475 0.990475
+0.990475 0.990475 0.990475 0.990475 0.990475 0.990475 0.990475 0.990475
+0.990475 0.990475 0.990475 0.990475 0.97619 0.97619 0.97619 0.961904
+0.961904 0.947618 0.947618 0.933332 0.933332 0.919046 0.919046 0.904761
+0.876189 0.861903 0.861903 0.833332 0.80476 0.776188 0.747617 0.704759
+0.619045 0.53333 0.461901 0.404757 0.347614 0.304757 0.233328 0.119041
+0.0904698 0.0333266 -0.066674 -0.152389 -0.195246 -0.280961 -0.323818
+-0.35239 -0.395247 -0.438105 -0.480962 -0.495248 -0.52382 -0.530963
+-0.538105 -0.566677 -0.595249 -0.62382 -0.645249 -0.666678 -0.680964
+-0.695249 -0.723821 -0.738107 -0.752393 -0.766678 -0.780964 -0.809536
+-0.816679 -0.823822 -0.838107 -0.852393 -0.866679 -0.880965 -0.895251
+-0.900012 -0.904774 -0.909536 -0.923822 -0.938108 -0.952394 -0.959537
+-0.96668 -0.973822 -0.980965 -0.988108 -0.995251 -1.02382 -1.03811
+-1.05239 -1.05239 -1.06668;
+#X coords 0 1 99 -1 200 140 1;
+#X restore 724 98 graph;
+#X obj 644 75 loadbang;
+#X obj 203 288 mm-filter~;
+#X obj 30 102 mm-vco~;
+#X obj 203 391 output~;
+#X obj 385 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 190 53 loadbang;
+#X obj 31 267 *~;
+#X text 405 76 <- trigger draw~ and ar~;
+#X obj 114 187 mm-ar~;
+#X obj 385 131 mm-draw~ 200 0 5000;
+#X connect 0 0 11 4;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 8 0;
+#X connect 6 0 10 0;
+#X connect 6 0 11 0;
+#X connect 7 0 4 2;
+#X connect 7 0 4 4;
+#X connect 7 0 4 6;
+#X connect 8 0 3 0;
+#X connect 10 0 8 1;
+#X connect 11 1 3 3;
+#X restore 122 648 pd filter-example;
+#X text 123 623 examples:;
+#X connect 12 0 25 0;
+#X connect 13 0 27 0;
+#X connect 14 0 13 4;
+#X connect 25 0 27 1;
+#X connect 26 0 25 4;
+#X connect 27 0 11 0;
+#X connect 27 0 11 1;
+#X connect 29 0 26 0;

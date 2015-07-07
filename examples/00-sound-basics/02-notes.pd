@@ -1,21 +1,28 @@
 #N canvas 446 95 737 573 10;
-#X obj 140 175 mm-vco~;
-#X obj 319 314 *~;
-#X obj 298 368 output~;
-#X text 349 319 <- multiply audio signal by another signal to control
+#X obj 138 214 mm-vco~;
+#X obj 317 353 *~;
+#X obj 296 407 output~;
+#X text 347 358 <- multiply audio signal by another signal to control
 amplitude (volume);
-#X text 371 378 <- output to speakers;
-#X floatatom 182 89 5 0 0 0 - - -;
-#X text 219 88 <- click and drag;
-#X obj 410 175 mm-adsr~;
-#X msg 135 73 60;
-#X msg 125 50 62;
-#X obj 136 126 mtof;
-#X floatatom 136 148 5 0 0 0 - - -;
-#X text 165 71 <- click to set note (60 = middle C);
-#X msg 111 29 64;
-#X msg 98 8 65;
-#X text 174 126 <- convert to frequency;
+#X text 369 417 <- output to speakers;
+#X floatatom 180 128 5 0 0 0 - - -;
+#X text 217 127 <- click and drag;
+#X obj 408 214 mm-adsr~;
+#X msg 133 112 60;
+#X msg 123 89 62;
+#X obj 134 165 mtof;
+#X floatatom 134 187 5 0 0 0 - - -;
+#X text 163 110 <- click to set note (60 = middle C);
+#X msg 109 68 64;
+#X msg 96 47 65;
+#X text 172 165 <- convert to frequency;
+#X text 349 7 The easiest way to get a specific note is to use a MIDI
+to Frequency conversion with the [mtof] object. The input is a MIDI
+note number where 60 represents middle C \, 61 is C# 62 is D and so
+on...;
+#X text 348 74 This example plays the first four notes of a C major
+scale.;
+#X text 435 188 v-- click on note_on to start the sound;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
