@@ -1,4 +1,4 @@
-#N canvas 159 58 964 660 10;
+#N canvas 159 58 1030 705 10;
 #X obj 219 413 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 219 440 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
@@ -63,9 +63,6 @@ a volume envelope;
 #X text 159 363 e.g. [mm-draw 1000 0 1] (as above \, in 1 second go
 between 0 and 1 based on the drawn values in the array;
 #X text 305 413 trigger envelope;
-#X text 72 -257 The [mm-draw~] lets you draw changes over time. You
-can specify the the top and bottom value and the length of time to
-read through the drawing when triggered.;
 #X text 70 -194 Use this object to create custom envelopes for sound
 paramters like volume \, pitch \, filter cutoff \, etc.;
 #X text 70 -142 To use:;
@@ -130,6 +127,13 @@ the "set" message.;
 #X connect 11 1 3 3;
 #X restore 122 648 pd filter-example;
 #X text 123 623 examples:;
+#X text 610 82 <- if you make any changes to the creation arguments
+the [set my_array] command must be resent (i.e. click on the message
+box);
+#X text 72 -257 The [mm-draw~] lets you draw changes over time which
+can be triggered with a bang. You can specify the the top and bottom
+value and the length of time to read through the drawing when triggered.
+;
 #X connect 12 0 25 0;
 #X connect 13 0 27 0;
 #X connect 14 0 13 4;

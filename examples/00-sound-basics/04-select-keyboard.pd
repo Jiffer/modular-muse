@@ -7,27 +7,46 @@ amplitude (volume);
 #X text 357 565 <- output to speakers;
 #X obj 125 324 mtof;
 #X floatatom 125 343 5 0 0 0 - - -;
-#X msg 98 203 60;
-#X msg 129 203 62;
-#X msg 162 203 64;
-#X msg 193 203 65;
-#X msg 223 202 67;
-#X msg 257 203 69;
-#X msg 288 203 71;
-#X msg 319 203 72;
+#X msg 98 253 60;
+#X msg 129 253 62;
+#X msg 162 253 64;
+#X msg 193 253 65;
+#X msg 223 252 67;
+#X msg 257 253 69;
+#X msg 288 253 71;
+#X msg 319 253 72;
 #X text 343 172 <- send a bang out outlet that matches input;
-#X text 350 202 <- major scale starting at middle C;
+#X text 350 252 <- major scale starting at middle C;
 #X obj 130 121 key;
 #X floatatom 130 144 5 0 0 0 - - -;
 #X obj 130 173 sel 97 115 100 102 106 107 108 59;
 #X text 131 77 the [key] object generates a number;
 #X text 131 94 the [sel] object routes the number to set the pitch
 ;
-#X obj 387 234 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 395 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 130 45 keys "asdf jkl \; " play a major scale;
 #X text 129 28 Uses the computer keyboard as a musical interface;
 #X obj 397 361 mm-ar~;
+#X obj 127 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 153 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 178 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 203 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 227 200 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 251 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 276 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 302 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 345 210 which outlet is being triggered;
+#X text 327 196 <- these bang objects let you see;
+#X text 421 151 <- send a bang on any key press;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
@@ -45,12 +64,20 @@ amplitude (volume);
 #X connect 18 0 19 0;
 #X connect 18 0 22 0;
 #X connect 19 0 7 0;
+#X connect 19 0 26 0;
 #X connect 19 1 8 0;
+#X connect 19 1 27 0;
 #X connect 19 2 9 0;
+#X connect 19 2 28 0;
 #X connect 19 3 10 0;
+#X connect 19 3 29 0;
 #X connect 19 4 11 0;
+#X connect 19 4 30 0;
 #X connect 19 5 12 0;
+#X connect 19 5 31 0;
 #X connect 19 6 13 0;
+#X connect 19 6 32 0;
 #X connect 19 7 14 0;
+#X connect 19 7 33 0;
 #X connect 22 0 25 0;
 #X connect 25 0 1 1;

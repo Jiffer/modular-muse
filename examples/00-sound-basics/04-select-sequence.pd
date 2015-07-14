@@ -1,59 +1,87 @@
 #N canvas 446 95 737 573 10;
-#X obj 126 222 mm-vco~;
-#X obj 305 361 *~;
-#X obj 284 415 output~;
-#X text 335 366 <- multiply audio signal by another signal to control
+#X obj 305 441 *~;
+#X obj 284 495 output~;
+#X text 335 446 <- multiply audio signal by another signal to control
 amplitude (volume);
-#X text 357 425 <- output to speakers;
-#X obj 396 222 mm-adsr~;
-#X obj 125 184 mtof;
-#X floatatom 125 203 5 0 0 0 - - -;
-#X msg 98 143 60;
-#X msg 129 143 62;
-#X msg 162 143 64;
-#X msg 193 143 65;
-#X msg 223 142 67;
-#X msg 257 143 69;
-#X msg 288 143 71;
+#X text 357 505 <- output to speakers;
+#X obj 396 302 mm-adsr~;
+#X floatatom 125 283 5 0 0 0 - - -;
+#X msg 98 193 60;
+#X msg 129 193 62;
+#X msg 162 193 64;
+#X msg 193 193 65;
+#X msg 223 192 67;
+#X msg 257 193 69;
+#X msg 288 193 71;
 #X obj 162 110 sel 0 1 2 3 4 5 6 7;
 #X obj 162 43 metro 200;
 #X floatatom 162 91 5 0 0 0 - - -;
-#X obj 161 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 161 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 319 143 72;
+#X msg 319 193 72;
 #X obj 162 67 counter 7;
 #X text 187 22 <- start metronome;
 #X text 227 42 <- send a bang every 200 ms;
 #X text 229 67 <- count up one every bang [0 \, 7];
 #X text 289 108 <- send a bang out outlet that matches input;
-#X text 359 143 <- major scale starting at middle C;
-#X obj 396 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X text 359 193 <- major scale starting at middle C;
+#X obj 396 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 416 197 <- note on/off;
+#X text 416 277 <- note on/off;
+#X obj 126 302 mm-waves~;
+#X obj 162 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 175 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 189 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 203 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 218 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 231 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 245 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 259 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 317 154 which outlet is being triggered;
+#X text 299 140 <- these bang objects let you see;
+#X floatatom 125 239 5 0 0 0 - - -;
+#X obj 125 260 mtof;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 0 2 1;
-#X connect 5 0 1 1;
-#X connect 6 0 7 0;
-#X connect 7 0 0 0;
-#X connect 8 0 6 0;
-#X connect 9 0 6 0;
-#X connect 10 0 6 0;
-#X connect 11 0 6 0;
-#X connect 12 0 6 0;
+#X connect 0 0 1 1;
+#X connect 4 0 0 1;
+#X connect 5 0 26 0;
+#X connect 6 0 37 0;
+#X connect 7 0 37 0;
+#X connect 8 0 37 0;
+#X connect 9 0 37 0;
+#X connect 10 0 37 0;
+#X connect 11 0 37 0;
+#X connect 12 0 37 0;
 #X connect 13 0 6 0;
-#X connect 14 0 6 0;
-#X connect 15 0 8 0;
-#X connect 15 1 9 0;
-#X connect 15 2 10 0;
-#X connect 15 3 11 0;
-#X connect 15 4 12 0;
-#X connect 15 5 13 0;
-#X connect 15 6 14 0;
-#X connect 15 7 19 0;
-#X connect 16 0 20 0;
-#X connect 17 0 15 0;
-#X connect 18 0 16 0;
-#X connect 19 0 6 0;
-#X connect 20 0 17 0;
-#X connect 26 0 5 0;
+#X connect 13 0 27 0;
+#X connect 13 1 7 0;
+#X connect 13 1 28 0;
+#X connect 13 2 8 0;
+#X connect 13 2 29 0;
+#X connect 13 3 9 0;
+#X connect 13 3 30 0;
+#X connect 13 4 10 0;
+#X connect 13 4 31 0;
+#X connect 13 5 11 0;
+#X connect 13 5 32 0;
+#X connect 13 6 12 0;
+#X connect 13 6 33 0;
+#X connect 13 7 17 0;
+#X connect 13 7 34 0;
+#X connect 14 0 18 0;
+#X connect 15 0 13 0;
+#X connect 16 0 14 0;
+#X connect 17 0 37 0;
+#X connect 18 0 15 0;
+#X connect 24 0 4 0;
+#X connect 26 0 0 0;
+#X connect 37 0 38 0;
+#X connect 38 0 5 0;

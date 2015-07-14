@@ -17,7 +17,6 @@ amplitude (volume);
 #X text 299 414 <- output to speakers;
 #X floatatom 79 175 5 0 0 0 - - -;
 #X text 116 174 <- click and drag;
-#X text 389 19;
 #X text 234 7 The modular-muse objects can be controlled directly from
 their GUI or by sending values or signals to the inlets. As with other
 Pd objects \, a ~ indicates the object produces an audio rate signal.
@@ -28,11 +27,11 @@ with other signals. This example multiplies the output of the waves~
 object to control the volume.;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
-#X connect 1 0 18 0;
-#X connect 2 0 18 0;
+#X connect 1 0 17 0;
+#X connect 2 0 17 0;
 #X connect 4 0 6 0;
 #X connect 5 0 6 0;
 #X connect 6 0 0 1;
 #X connect 7 0 6 0;
-#X connect 14 0 18 0;
-#X connect 18 0 0 0;
+#X connect 14 0 17 0;
+#X connect 17 0 0 0;

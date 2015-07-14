@@ -1,0 +1,31 @@
+#N canvas 0 22 1267 742 16;
+#X obj 442 351 *~;
+#X obj 562 223 mm-adsr~;
+#X obj 442 444 mm-filter~;
+#X obj 280 224 mm-vco~;
+#X text 231 -10 This is a subtractive synthesis example with both mm-vco~
+and mm-fm~ as sound sources. Use the mm-gain~ object to change the
+balance;
+#X obj 624 353 mm-analog 1 500 5000;
+#X obj 432 646 dac~;
+#X text 231 -40 simple-synth.pd;
+#X obj 280 133 mm-analog 0 200 800;
+#X obj 443 525 mm-gain~;
+#X text 503 329 Digital input 1 toggles filter;
+#X text 401 127 Analog input 0 controls frequency;
+#X text 122 353 multiply the waveform by an envelope ->;
+#X text 750 352 Analog input 1 controls filter cutoff frequency from
+500 to 5000 Hz;
+#X text 482 644 <- stereo output to speakers;
+#X obj 54 -33 mm;
+#X obj 531 174 mm-digital 2;
+#X text 639 171 Digital input 2 controls the volume envelope;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 2 0 9 0;
+#X connect 3 0 0 0;
+#X connect 5 0 2 3;
+#X connect 8 0 3 0;
+#X connect 9 0 6 0;
+#X connect 9 0 6 1;
+#X connect 16 0 1 0;

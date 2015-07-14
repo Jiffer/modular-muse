@@ -1,0 +1,43 @@
+#N canvas 0 22 1025 619 10;
+#X obj 220 436 *~;
+#X obj 199 490 output~;
+#X text 250 441 <- multiply audio signal by another signal to control
+amplitude (volume);
+#X text 272 500 <- output to speakers;
+#X obj 418 274 mm-adsr~;
+#X obj 144 225 mtof;
+#X floatatom 144 247 5 0 0 0 - - -;
+#X text 182 225 <- convert to frequency;
+#X text 445 248 v-- click on note_on to start the sound;
+#X msg -133 174 60;
+#X obj -132 227 mtof;
+#X floatatom -132 249 5 0 0 0 - - -;
+#X text -103 172 <- click to set note (60 = middle C);
+#X text -94 227 <- convert to frequency;
+#X obj 67 377 +~;
+#X msg 143 172 64;
+#X text 173 170 <- click to set note (64 is E above middle C);
+#X obj -133 151 loadbang;
+#X obj 142 151 loadbang;
+#X obj -128 276 mm-waves~;
+#X obj 148 274 mm-waves~;
+#X text 15 7 To create more than one note at a time we need more than
+one sound generator. Here there are two waves~ objects which produce
+two notes of a chord.;
+#X text 94 375 <- the two waveforms are added together;
+#X text 13 60 If both had their own adsr~ envelope they could be enabled
+and disabled individually;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 4 0 0 1;
+#X connect 5 0 6 0;
+#X connect 6 0 20 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 19 0;
+#X connect 14 0 0 0;
+#X connect 15 0 5 0;
+#X connect 17 0 9 0;
+#X connect 18 0 15 0;
+#X connect 19 0 14 0;
+#X connect 20 0 14 1;
