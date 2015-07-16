@@ -1,4 +1,4 @@
-#N canvas 11 24 998 702 12;
+#N canvas 213 23 998 702 12;
 #X obj 82 673 mm-analog 0;
 #X obj 83 820 mm-out 0;
 #X obj 86 783 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
@@ -34,65 +34,35 @@ patch.;
 0;
 #X text 177 155 port #;
 #X text 243 155 Select which port to open;
-#X text 177 185 devices;
 #X obj 76 269 cnv 3 550 3 empty \$0-pddp.cnv.inlets more_info 8 12
 0 13 -228856 -1 0;
 #X text 177 368 modular-mus can only be connected in one patch at a
 time. However messages from that device and connected modular-mus object
 will be sent to all modular-mus interface objects (see below);
 #X text 114 542 modular-mus input and output interface objects;
-#N canvas 267 146 924 370 mm-test-connections 0;
-#X obj 445 12 mm-digital 3;
-#X obj 333 11 mm-digital 2;
-#X obj 221 11 mm-digital 1;
-#X obj 107 11 mm-digital 0;
+#N canvas 140 146 1099 447 mm-test-connections 1;
+#X obj 189 11 mm-digital 3;
+#X obj 106 11 mm-digital 2;
 #X obj 105 80 mm-analog 0;
 #X obj 218 80 mm-analog 1;
 #X obj 331 80 mm-analog 2;
 #X obj 444 80 mm-analog 3;
-#X obj 104 224 mm-out 0;
 #X text 1 17 Digital Inputs;
 #X text 0 107 Analog Inputs;
-#X text 9 200 Outputs;
 #X obj 558 80 mm-analog 4;
-#X obj 557 12 mm-digital 4;
-#X obj 672 12 mm-digital 5;
+#X obj 272 11 mm-digital 4;
+#X obj 357 11 mm-digital 5;
 #X obj 673 80 mm-analog 5;
-#X obj 107 189 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 115 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 222 189 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 230 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 337 189 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 451 189 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 459 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 563 189 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 679 189 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 687 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 219 224 mm-out 1;
-#X obj 334 224 mm-out 2;
-#X obj 448 224 mm-out 3;
-#X obj 560 224 mm-out 4;
-#X obj 676 224 mm-out 5;
-#X connect 16 0 8 0;
-#X connect 17 0 8 0;
-#X connect 18 0 26 0;
-#X connect 19 0 26 0;
-#X connect 20 0 27 0;
-#X connect 21 0 28 0;
-#X connect 22 0 28 0;
-#X connect 23 0 29 0;
-#X connect 24 0 30 0;
-#X connect 25 0 30 0;
+#X obj 788 80 mm-analog 6;
+#X obj 903 80 mm-analog 7;
+#X obj 440 11 mm-digital 6;
+#X obj 524 11 mm-digital 7;
+#X obj 606 11 mm-digital 8;
+#X obj 689 11 mm-digital 9;
+#X obj 772 11 mm-digital 10;
+#X obj 857 11 mm-digital 11;
+#X obj 943 11 mm-digital 12;
+#X obj 1027 11 mm-digital 13;
 #X restore 247 10 pd mm-test-connections;
 #X text 259 669 mm-analog: analog input object. Use to read inputs
 form the analog pins. Use with analog modules including knobs \, sliders
@@ -156,7 +126,6 @@ object);
 #X text 427 1633 AR (Attack \, Release) Envelope Generator;
 #X text 481 1740 Array based Envelope Generator;
 #X text 481 1758 draw in the array to create a "gesture";
-#X text 174 53 serial port;
 #X text 267 52 open command to comport object;
 #X text 509 73 - see comport for more;
 #X text 178 123 open;
@@ -180,6 +149,8 @@ sawtooth and noise waveforms;
 #X text 369 1741 mm-draw~;
 #X text 480 1783 see help for details;
 #X obj 82 587 mm-digital 2;
+#X text 177 185 list;
+#X text 174 53 comport;
 #X connect 2 0 1 0;
 #X connect 7 0 1 0;
 #X coords 0 702 1 701 150 110 0;

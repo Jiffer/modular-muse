@@ -9,14 +9,22 @@
 1;
 #X obj 91 131 t b f;
 #X obj 104 280 outlet;
-#X text 148 277 button value inverse;
 #X obj 85 100 change;
 #X text 144 132 <- invert it since hw uses a pull up;
-#X connect 1 0 9 0;
+#X text 148 277 digital pin value inverse;
+#X obj 151 178 sel 1;
+#X obj 161 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 161 254 outlet;
+#X text 209 255 send bang on 1;
+#X connect 1 0 8 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
 #X connect 5 0 7 0;
+#X connect 5 0 11 0;
 #X connect 6 0 4 0;
 #X connect 6 1 3 1;
-#X connect 9 0 6 0;
+#X connect 8 0 6 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
 #X coords -1 -1 1 1 80 40 1 100 200;
