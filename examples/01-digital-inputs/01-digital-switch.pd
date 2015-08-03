@@ -1,0 +1,16 @@
+#N canvas 0 22 1019 560 10;
+#X obj 52 39 mm;
+#X obj 280 173 mm-digital 2;
+#X obj 553 231 mm-waves~;
+#X obj 530 351 *~;
+#X obj 528 391 dac~;
+#X text 239 44 <- connect to your board;
+#X text 569 389 <- send out to speakers;
+#X obj 280 230 mm-adsr~;
+#X text 379 173 <- connect pin 2 to GND to turn sound on;
+#X text 572 350 <- multiply adsr~ envelope by waveform;
+#X connect 1 0 7 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 7 0 3 0;

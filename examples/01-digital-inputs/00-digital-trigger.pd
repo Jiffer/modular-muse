@@ -1,0 +1,17 @@
+#N canvas 0 22 1019 560 10;
+#X obj 52 39 mm;
+#X obj 207 177 mm-digital 2;
+#X obj 553 231 mm-waves~;
+#X obj 280 230 mm-ar~;
+#X obj 530 351 *~;
+#X obj 528 391 dac~;
+#X text 239 44 <- connect to your board;
+#X text 306 177 <- connect pin 2 to GND to trigger;
+#X text 572 350 <- multiply ar~ envelope by waveform when triggered
+;
+#X text 569 389 <- send out to speakers;
+#X connect 1 1 3 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 5 1;

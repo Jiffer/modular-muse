@@ -1,11 +1,16 @@
-#N canvas 0 22 826 484 10;
-#X obj 197 321 mm;
+#N canvas 0 22 915 643 10;
+#X obj 197 396 mm;
 #X text 198 66 Right click on objects and selct "help" for more information
 about that object. Most modular-muse objects have help files with more
 information about the inlets and outlets and examples.;
-#X text 195 251 The [mm] object is how you connect Pd to the modular-muse
+#X text 195 326 The [mm] object is how you connect Pd to the modular-muse
 hardware. Go to the [mm] help to see a list of ALL modular-muse including
 sound generation \, control \, connection and audio effects.;
 #X obj 199 143 mm-waves~;
-#X text 345 379 <-- right click me and select help;
+#X text 345 454 <-- right click me and select help;
 #X text 463 175 <-- right click me and select help;
+#X obj 226 256 dac~;
+#X text 277 256 <-- this is the dac~ object (digital to analog converter)
+;
+#X text 301 271 connect a wire from the waves~ object outlet to both
+inlets to send the sound to your speakers;

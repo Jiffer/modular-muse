@@ -1,0 +1,14 @@
+#N canvas 0 22 915 483 10;
+#X obj 86 64 mm;
+#X obj 331 115 mm-analog 0;
+#X floatatom 331 206 5 0 0 0 - - -;
+#X obj 327 246 mm-analog 0 40 80;
+#X floatatom 327 337 5 0 0 0 - - -;
+#X text 460 114 the number (0 in this case) specifies which;
+#X text 460 134 analog inputs to read from;
+#X text 459 244 <- two more numbers can be used to specify the low
+and high end to map the analog input to. Here the output goes from
+40 to 80;
+#X text 242 64 <- first connect to board;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
