@@ -1,4 +1,4 @@
-#N canvas 662 200 1017 613 10;
+#N canvas 531 200 1017 613 10;
 #X obj 331 113 mm-adsr~;
 #X obj 70 92 mtof;
 #X obj 305 228 *~;
@@ -40,6 +40,8 @@
 -1 -1;
 #X obj 554 81 r release;
 #X obj 377 85 r attack;
+#X text 26 296 This is not a standalone patch;
+#X text 9 312 open up the five-note-synth to see it in use;
 #X connect 0 0 2 1;
 #X connect 1 0 3 0;
 #X connect 2 0 11 0;

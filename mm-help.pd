@@ -36,11 +36,8 @@ patch.;
 #X text 243 155 Select which port to open;
 #X obj 76 269 cnv 3 550 3 empty \$0-pddp.cnv.inlets more_info 8 12
 0 13 -228856 -1 0;
-#X text 177 368 modular-mus can only be connected in one patch at a
-time. However messages from that device and connected modular-mus object
-will be sent to all modular-mus interface objects (see below);
 #X text 114 542 modular-mus input and output interface objects;
-#N canvas 140 146 1099 447 mm-test-connections 1;
+#N canvas 140 146 1099 447 mm-test-connections 0;
 #X obj 189 11 mm-digital 3;
 #X obj 106 11 mm-digital 2;
 #X obj 105 80 mm-analog 0;
@@ -151,6 +148,9 @@ sawtooth and noise waveforms;
 #X obj 82 587 mm-digital 2;
 #X text 177 185 list;
 #X text 174 53 comport;
+#X text 177 368 modular-mus can only be connected in one patch at a
+time. However messages from that device and connected modular-mus object
+will be sent to all modular-mus interface objects (see below);
 #X connect 2 0 1 0;
 #X connect 7 0 1 0;
 #X coords 0 702 1 701 150 110 0;

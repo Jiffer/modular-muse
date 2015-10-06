@@ -42,7 +42,7 @@ with their own filter initialized to different cutoffs.;
 #X text 1177 526 controls delay time;
 #X text 1264 599 Analog in 1;
 #X text 1265 616 controls feedback amount;
-#X obj 41 29 mm-clippys;
+#X obj 41 29 mm;
 #X connect 1 0 16 0;
 #X connect 2 0 4 1;
 #X connect 3 0 4 0;

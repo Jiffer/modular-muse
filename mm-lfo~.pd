@@ -5,7 +5,7 @@
 #X obj 165 14 loadbang;
 #X obj 208 295 mm-map;
 #X obj 314 181 loadbang;
-#X floatatom 269 132 5 0 0 2 Min - -;
+#X floatatom 256 133 5 0 0 2 Min - -;
 #X floatatom 309 132 5 0 0 2 Max - -;
 #X msg 276 219 -1;
 #X msg 305 220 1;
@@ -20,9 +20,9 @@
 #X obj 310 70 inlet;
 #X msg 364 300 0.5;
 #X obj 215 184 osc~;
-#X obj 218 133 knob 32 32 0.05 20 0 0 empty empty Period -5 -10 0 12
--262144 -1 -1 70 1;
-#X obj 168 120 tgl 25 0 empty empty on 4 30 0 14 -99865 -4034 -1 1
+#X obj 181 133 knob 32 32 0.05 20 0 0 empty empty Freq -5 -10 0 12
+-262144 -1 -1 0 1;
+#X obj 108 121 tgl 25 0 empty empty on 4 30 0 14 -99865 -4034 -1 1
 1;
 #X obj 148 71 inlet;
 #X obj 334 220 f \$2;

@@ -1,7 +1,6 @@
 #N canvas 0 22 687 478 10;
-#X obj 17 66 cnv 15 600 190 empty empty Digital_Inputs 20 12 0 14 -97298
+#X obj 17 66 cnv 15 600 210 empty empty Digital_Inputs 20 12 0 14 -97298
 -66577 0;
-#X obj 54 118 mm-digital 0;
 #X text 52 93 mm-digital: digital input object;
 #X text 391 78 Usage: [mm-digital #];
 #X obj 30 176 cnv 3 550 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
@@ -17,16 +16,19 @@
 #X text 41 26 a modular hardware interfaces and audio manipulation
 toolkit;
 #X text 198 184 current value of digital input (0 or 1);
-#X text 123 316;
-#X obj 69 317 mm-digital 0;
-#X obj 69 370 change;
-#X obj 69 396 sel 1;
-#X obj 69 423 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 117 369 <- only send the output when it changes;
-#X text 119 396 <- send a bang when a 1 is sent to the inlet;
 #X text 67 277 The following snippet turns the digital read value (1
 or 0) to a bang when the value changes from 0 to 1;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 17 0;
+#X floatatom 69 368 5 0 0 0 - - -;
+#X obj 142 369 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 108 228 cnv 17 3 37 empty empty 1 5 9 0 16 -228856 -45076 0
+;
+#X text 128 227 bang;
+#X text 198 227 sends a bang when value changes from 0 to 1;
+#X obj 54 118 mm-digital 2;
+#X obj 69 317 mm-digital 2;
+#X text 160 315 <- this reads from digital pin 2 on the Arduino;
+#X text 67 398 ^- output a 1 or 0 based on the current state;
+#X text 166 368 <- outputs a bang when input changes from 0 to 1;
+#X connect 19 0 13 0;
+#X connect 19 1 14 0;

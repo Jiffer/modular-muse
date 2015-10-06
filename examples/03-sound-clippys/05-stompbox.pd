@@ -1,0 +1,41 @@
+#N canvas 0 22 853 749 10;
+#X obj 63 37 mm;
+#X obj 163 817 mm-reverb~;
+#X obj 162 420 mm-overdrive~;
+#X obj 163 687 mm-tremolo~;
+#X obj 162 553 mm-filter~;
+#X obj 162 288 mm-delay~;
+#X obj 162 217 adc~;
+#X obj 152 1019 dac~;
+#X obj 163 899 mm-gain~;
+#X text 202 217 <- from the computer microphone;
+#X obj 174 242 mm-digital 2;
+#X obj 173 367 mm-digital 3;
+#X obj 172 502 mm-digital 4;
+#X obj 174 636 mm-digital 5;
+#X obj 169 768 mm-digital 6;
+#X obj 289 931 mm-digital 7;
+#X obj 419 200 mm-analog 0 10 2000;
+#X obj 424 607 mm-analog 1 0 1;
+#X text 324 40 Sends the computers audio input through all of the modular-muse
+audio effects. Use the computer's microphone or plug in an instrument
+like a guitar.;
+#X text 326 94 Digital pins: 2-6 toggle the effects on and off \, digital
+pin 7 toggles MUTE;
+#X text 328 132 comment;
+#X connect 1 0 8 0;
+#X connect 2 0 4 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 10 1 5 1;
+#X connect 11 1 2 1;
+#X connect 12 1 4 1;
+#X connect 13 1 3 1;
+#X connect 14 1 1 1;
+#X connect 15 1 8 2;
+#X connect 16 0 5 3;
+#X connect 17 0 3 4;

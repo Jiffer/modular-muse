@@ -1,0 +1,29 @@
+#N canvas 0 22 1173 562 10;
+#X obj 52 39 mm;
+#X text 203 38 <- connect to your board;
+#X obj 419 168 mm-digital 2;
+#X obj 546 132 mm-digital 3;
+#X msg 490 236 2;
+#X msg 619 202 3;
+#X floatatom 619 262 5 0 0 0 - - -;
+#X floatatom 419 296 5 0 0 0 - - -;
+#X floatatom 546 185 5 0 0 0 - - -;
+#X text 514 43 There are two outputs on a mm-digital object \, the
+first one gives the current state \, on or off. The second tells you
+when the state has changed to on;
+#X text 650 203 <- when the state changes to "on" the message is sent
+;
+#X text 463 293 <- the left outlet gives the current value;
+#X obj 629 176 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 504 215 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 657 261 <- displays the last value sent;
+#X connect 2 0 7 0;
+#X connect 2 1 4 0;
+#X connect 2 1 13 0;
+#X connect 3 0 8 0;
+#X connect 3 1 5 0;
+#X connect 3 1 12 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
