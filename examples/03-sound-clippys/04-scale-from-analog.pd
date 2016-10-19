@@ -1,4 +1,4 @@
-#N canvas 0 22 887 697 10;
+#N canvas 384 22 887 697 10;
 #X obj 216 211 int;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array scale 12 float 3;
@@ -19,13 +19,13 @@
 #X obj 458 556 mm-adsr~;
 #X obj 210 467 mm-filter~;
 #X obj 386 633 *~;
-#X obj 479 381 mm-analog 5 200 5000;
 #X text 294 27 read from an analog input to select specific notes from
 a scale. The values are stored in an array and converted to frequencies
 ;
 #X text 291 75 digital pin 2: note on/off;
 #X text 292 93 analog pin 0: note value;
-#X obj 216 128 mm-analog 0 0 14;
+#X obj 479 381 mm-analog 0 200 5000;
+#X obj 216 128 mm-analog 2 0 14;
 #X connect 0 0 4 0;
 #X connect 0 0 5 0;
 #X connect 3 0 6 0;
@@ -40,5 +40,5 @@ a scale. The values are stored in an array and converted to frequencies
 #X connect 14 0 15 0;
 #X connect 15 0 9 0;
 #X connect 15 0 9 1;
-#X connect 16 0 14 3;
+#X connect 19 0 14 3;
 #X connect 20 0 0 0;

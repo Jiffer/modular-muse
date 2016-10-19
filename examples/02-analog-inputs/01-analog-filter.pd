@@ -12,9 +12,11 @@
 #X text 612 221 port 0;
 #X text 611 242 low end : 200;
 #X text 613 261 high end : 2000;
+#X obj 273 230 mm-digital 2;
 #X connect 1 0 6 3;
 #X connect 1 0 7 0;
 #X connect 2 0 6 0;
 #X connect 3 0 4 0;
 #X connect 5 0 2 5;
 #X connect 6 0 3 0;
+#X connect 13 0 6 1;

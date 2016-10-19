@@ -1,0 +1,67 @@
+#N canvas 0 22 943 669 10;
+#X obj 164 -73 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 -82 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 164 -40 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 164 -9 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 184 -74 float;
+#X text 184 -41 float;
+#X obj 85 99 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0 13
+-228856 -1 0;
+#X obj 164 107 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 184 106 signal;
+#X text 254 106 Audio output;
+#X obj 36 -509 cnv 15 600 50 empty empty modular-muse_Plucked_String_Model
+20 12 0 18 -183872 -66577 0;
+#X text 60 -487 frequency modulation synthesis waveform generator;
+#X text 86 -113 mm-fm~;
+#X text 163 -113 frequency modulation synthesis;
+#X obj 164 21 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 187 19 float;
+#X obj 210 -166 dac~;
+#X obj 211 -191 *~;
+#X obj 243 -221 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X text 269 -221 <-- toggle sound;
+#X obj 212 -439 vsl 25 100 50 5000 1 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 2000 1;
+#X floatatom 211 -331 5 0 0 0 - - -;
+#X obj 272 -437 vsl 25 100 0 1000 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1600 1;
+#X floatatom 271 -329 5 0 0 0 - - -;
+#X text 254 -41 Glide / portamento time (0 - 1000 ms);
+#X obj 211 -305 mm-pluck~;
+#X obj 391 -439 vsl 25 100 0.1 30 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 800 1;
+#X floatatom 390 -331 5 0 0 0 - - -;
+#X obj 451 -439 vsl 25 100 400 5000 1 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 6100 1;
+#X floatatom 450 -331 5 0 0 0 - - -;
+#X obj 164 52 cnv 17 3 25 empty empty 4 5 9 0 16 -228856 -162280 0
+;
+#X text 187 50 float;
+#X text 254 51 brightness (400 - 5000);
+#X text 254 20 decay time (0.1 - 30);
+#X text 254 -10 Pluck string;
+#X text 187 -11 bang;
+#X text 254 -74 Frequency (Hz) (20 - 10000 Hz);
+#X obj 332 -346 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 17 0 16 0;
+#X connect 17 0 16 1;
+#X connect 18 0 17 1;
+#X connect 20 0 21 0;
+#X connect 21 0 25 0;
+#X connect 22 0 23 0;
+#X connect 23 0 25 1;
+#X connect 25 0 17 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 3;
+#X connect 28 0 29 0;
+#X connect 29 0 25 4;
+#X connect 37 0 25 2;

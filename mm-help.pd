@@ -95,7 +95,6 @@ Generator;
 #X obj 85 1126 mm-fm~;
 #X obj 83 1499 mm-mix2~;
 #X obj 82 1556 mm-adsr~;
-#X obj 82 1872 mm-lfo 3 200 1000;
 #X text 621 1979 mm-seq;
 #X text 711 1981 16 step sequencer;
 #X obj 84 1380 mm-gain~;
@@ -151,6 +150,7 @@ sawtooth and noise waveforms;
 #X text 177 368 modular-mus can only be connected in one patch at a
 time. However messages from that device and connected modular-mus object
 will be sent to all modular-mus interface objects (see below);
+#X obj 82 1872 mm-lfo~ 3 200 1000;
 #X connect 2 0 1 0;
 #X connect 7 0 1 0;
 #X coords 0 702 1 701 150 110 0;

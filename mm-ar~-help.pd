@@ -9,7 +9,6 @@
 #X text 253 -32 Frequency (Hz);
 #X text 183 -32 float;
 #X text 184 -5 float;
-#X text 253 -5 Attack - time to ramp a note on;
 #X obj 84 -36 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
 -228856 -1 0;
 #X obj 84 65 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0 13
@@ -30,13 +29,14 @@ a volume envelope;
 #X obj 237 -279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 236 -216 mm-ar~;
-#X text 253 19 Release - time to ramp back to 0;
 #X text 260 -280 <- trigger attack/release;
 #X text 278 -263 relase happens automatically after attack time;
 #X text 162 -67 AR (Attack \, Release) Envelope Generator;
 #X text 85 -67 mm-ar~;
-#X connect 16 0 15 0;
-#X connect 16 0 15 1;
-#X connect 18 0 16 0;
-#X connect 19 0 20 0;
-#X connect 20 0 16 1;
+#X text 253 -5 Attack - time to ramp a note on (1 - 2000 ms);
+#X text 253 19 Release - time to ramp back to 0 (1 - 5000 ms);
+#X connect 15 0 14 0;
+#X connect 15 0 14 1;
+#X connect 17 0 15 0;
+#X connect 18 0 19 0;
+#X connect 19 0 15 1;

@@ -3,7 +3,7 @@
 #X obj 250 244 -;
 #X floatatom 278 196 5 0 0 0 - - -;
 #X obj 312 325 /;
-#X obj 335 211 t b;
+#X obj 348 218 t b;
 #X obj 236 219 t b;
 #X obj 288 270 t b;
 #X obj 225 135 inlet;
@@ -40,7 +40,6 @@ ranges;
 #X connect 2 0 1 0;
 #X connect 3 0 28 1;
 #X connect 4 0 0 0;
-#X connect 4 0 31 0;
 #X connect 5 0 1 0;
 #X connect 6 0 3 0;
 #X connect 7 0 5 0;

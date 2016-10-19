@@ -1,28 +1,51 @@
-#N canvas 638 292 642 486 12;
-#X obj 154 -303 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
+#N canvas 483 87 665 586 12;
+#X obj 154 -145 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
 0;
-#X obj 75 -312 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
+#X obj 75 -154 cnv 3 400 3 empty \$0-pddp.cnv.inlets inlets 8 12 0
 13 -228856 -1 0;
-#X obj 154 -270 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280
+#X obj 154 -112 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280
 0;
-#X obj 154 -239 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280
-0;
-#X text 174 -241 float;
-#X text 244 -271 Glide / portamento time;
-#X text 174 -304 float;
-#X text 174 -271 float;
-#X obj 75 -211 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
+#X obj 154 -81 cnv 17 3 25 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 174 -83 float;
+#X text 174 -146 float;
+#X text 174 -113 float;
+#X obj 75 -53 cnv 3 400 3 empty \$0-pddp.cnv.inlets outlets 8 12 0
 13 -228856 -1 0;
-#X obj 154 -203 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280
-0;
-#X text 174 -204 signal;
-#X text 244 -204 Audio output;
-#X text 244 -304 Frequency (Hz) (no effect on noise);
+#X obj 154 -45 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 174 -46 signal;
+#X text 244 -44 Audio output;
+#X text 246 -145 Frequency (Hz) (no effect on noise);
 #X obj 26 -549 cnv 15 600 50 empty empty modular-mus_pwm_waveform_generator
 20 12 0 18 -183872 -66577 0;
-#X obj 68 -472 mm-pwm~;
+#X obj 68 -354 mm-pwm~;
 #X text 50 -527 pulse width modulation sound generator;
-#X text 76 -361 mm-pwm~;
-#X text 153 -361 pulse width modulation waveform generator;
-#X text 157 -341;
-#X text 244 -240 pulse shape (.5 would be a square wave);
+#X text 76 -203 mm-pwm~;
+#X text 153 -203 pulse width modulation waveform generator;
+#X text 157 -183 comment;
+#X text 246 -84 pulse shape (.5 would be a square wave);
+#X obj 108 -272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 68 -256 *~;
+#X obj 66 -232 dac~;
+#X obj 68 -489 vsl 25 100 50 5000 1 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 68 -378 5 0 0 0 - - -;
+#X obj 189 -488 vsl 25 100 10 1000 1 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X floatatom 189 -377 5 0 0 0 - - -;
+#X floatatom 311 -377 5 0 0 0 - - -;
+#X obj 311 -488 vsl 25 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 243 -115 Glide / portamento time (0 - 1000 ms);
+#X connect 13 0 20 0;
+#X connect 19 0 20 1;
+#X connect 20 0 21 0;
+#X connect 20 0 21 1;
+#X connect 22 0 23 0;
+#X connect 23 0 13 0;
+#X connect 24 0 25 0;
+#X connect 25 0 13 1;
+#X connect 26 0 13 2;
+#X connect 27 0 26 0;

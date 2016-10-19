@@ -39,13 +39,25 @@
 #X msg 347 -395 2;
 #X text 244 10 modulation index (0 - 10);
 #X text 244 -20 FM frequency ratio (0.1 - 6);
-#X text 244 -51 Glide / portamento time (10 - 500 ms);
 #X text 244 -84 Frequency (Hz) (20 - 10 \, 0 Hz);
+#X obj 202 -449 vsl 25 100 50 5000 1 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 0 1;
+#X floatatom 201 -341 5 0 0 0 - - -;
+#X obj 283 -447 vsl 25 100 0 1000 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 282 -339 5 0 0 0 - - -;
+#X floatatom 360 -340 5 0 0 0 - - -;
+#X text 244 -51 Glide / portamento time (0 - 1000 ms);
 #X connect 18 0 17 0;
 #X connect 18 0 17 1;
-#X connect 19 0 21 2;
+#X connect 19 0 36 0;
 #X connect 20 0 18 1;
 #X connect 21 0 18 0;
 #X connect 23 0 21 3;
 #X connect 24 0 21 3;
-#X connect 28 0 21 2;
+#X connect 28 0 36 0;
+#X connect 32 0 33 0;
+#X connect 33 0 21 0;
+#X connect 34 0 35 0;
+#X connect 35 0 21 1;
+#X connect 36 0 21 2;
